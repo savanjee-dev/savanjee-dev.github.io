@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#211a15">
+<meta name="description" content="Drishyam is an Android photo discovery app by Savan Jee. Explore its immersive photo feed, image viewer, wallpaper tools, personalisation and story.">
+<link rel="canonical" href="https://savanjee-dev.github.io/projects/drishyam/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Savan Jee">
+<meta property="og:title" content="Drishyam — An Android Photo Discovery Experience">
+<meta property="og:description" content="A closer look at Drishyam, an Android photo discovery app built by Savan Jee.">
+<meta property="og:url" content="https://savanjee-dev.github.io/projects/drishyam/">
+<meta property="og:image" content="https://savanjee-dev.github.io/assets/og-savan-portfolio.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Drishyam — An Android Photo Discovery Experience">
+<meta name="twitter:description" content="A closer look at Drishyam, an Android photo discovery app built by Savan Jee.">
+<title>Drishyam — Android Photo Discovery App | Savan Jee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#211a15;--text:#eee5d8;--muted:#c9bdaf;--gold:#b99a70;--rule:rgba(220,194,158,.2)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.8 Manrope,"DM Sans",sans-serif;isolation:isolate}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 78% 24%,rgba(113,79,49,.17),transparent 44%),linear-gradient(105deg,rgba(18,14,11,.92),rgba(39,28,20,.9) 52%,rgba(22,17,13,.96)),repeating-linear-gradient(0deg,rgba(222,195,158,.018) 0 1px,transparent 1px 4px)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 56px));margin:auto}
+header{padding:25px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule)}
+.brand{display:inline-flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.15em;font-size:14px}.brand b{color:var(--gold)}
+.back,.eyebrow,.label{color:#c2a77f;font:600 10px Manrope,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.back{font-size:11px;letter-spacing:.08em;color:var(--muted);border-bottom:1px solid rgba(185,154,112,.4);padding-bottom:5px}
+main{padding-bottom:80px}.hero{padding:clamp(75px,12vw,130px) 0 75px;max-width:820px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:500}
+h1{font-size:clamp(48px,8vw,86px);line-height:1.08;letter-spacing:-.04em;margin:20px 0 24px}
+.lede{max-width:690px;color:var(--muted);font-size:16px}
+.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:#b9a58a;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.hero-actions{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px}.link{display:inline-flex;align-items:center;gap:9px;padding-bottom:7px;border-bottom:1px solid rgba(185,154,112,.55);font-size:13px;font-weight:600}
+section{padding:65px 0;border-top:1px solid var(--rule)}h2{font-size:clamp(34px,5vw,48px);line-height:1.15;margin:12px 0 20px;letter-spacing:-.025em}
+.copy{max-width:760px;color:var(--muted);font-size:15px}
+.story{margin:32px 0 0;padding:26px 0;border-top:1px solid rgba(197,167,126,.3);border-bottom:1px solid rgba(197,167,126,.2)}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:32px}
+.shot{margin:0;min-width:0}.shot img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid rgba(197,167,126,.28);background:#15120f;box-shadow:0 18px 45px rgba(0,0,0,.22)}
+.shot figcaption{padding:13px 2px 0;color:#c9bdaf;font-size:13px}.shot small{display:block;color:#a99885;font-size:10px;letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px}
+.story-note{margin-top:26px;padding:22px 0;border-top:1px solid rgba(197,167,126,.22);color:#c9bdaf;font-size:14px}
+.tech{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.tech span{border:1px solid rgba(185,154,112,.35);border-radius:99px;padding:8px 13px;color:#e3d8c8;font-size:12px}
+footer{padding:28px 0 40px;color:#a99885;font:11px Manrope,sans-serif;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--rule)}
+@media(max-width:650px){.wrap{width:calc(100% - 36px)}header{padding:20px 0}.hero{padding:75px 0 58px}.gallery{grid-template-columns:1fr;gap:26px}section{padding:52px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body><div class="wrap">
+<header><a class="brand" href="/">SAVAN<b>.</b></a><a class="back" href="/">← Back to portfolio</a></header>
+<main>
+<div class="hero">
+<div class="eyebrow">Selected project · Android</div>
+<h1>Drishyam.<br>A little wonder, every day.</h1>
+<p class="lede">A photo discovery experience built around slowing down and seeing the world differently. Drishyam brings photography, visual stories and thoughtful mobile interactions into one immersive Android app.</p>
+<div class="meta"><span>Designed &amp; developed by Savan</span><span>Android application</span><span>Version 2.7.16 shown in supplied screens</span></div>
+<div class="hero-actions"><a class="link" href="https://github.com/savanjee-dev/Drishyam" target="_blank" rel="noopener noreferrer">View source repository ↗</a><a class="link" href="#screens">Explore the interface ↓</a></div>
+</div>
+<section id="overview"><div class="label">01 / The idea</div><h2>Photography, without the rush.</h2><p class="copy">Drishyam is a visual discovery app for people who enjoy photography. Its experience centres on a flowing image feed, browsable themes and a focused viewer that gives each photograph room to breathe. The interface uses a distinctive moss-and-olive palette, expressive typography and carefully layered surfaces.</p><div class="story"><p class="copy">The aim is simple: make discovering photographs feel calm, immersive and personal — while keeping useful details such as creator credits, source information and image actions close at hand.</p></div></section>
+<section id="screens"><div class="label">02 / Inside Drishyam</div><h2>A closer look.</h2><p class="copy">Screens from the app, presented in the order of the experience. These are supplied device screenshots; their original interface and status bars are retained.</p>
+<div class="gallery">
+<figure class="shot"><img src="/assets/drishyam-01.webp" alt="Drishyam splash screen with its mountain logo and loading indicator" loading="lazy"><figcaption><small>01 · First impression</small>Splash screen and visual identity</figcaption></figure>
+<figure class="shot"><img src="/assets/drishyam-02.webp" alt="Drishyam home feed with photo cards and category navigation" loading="lazy"><figcaption><small>02 · Discover</small>Home feed and category browsing</figcaption></figure>
+<figure class="shot"><img src="/assets/drishyam-03.webp" alt="Immersive photograph viewer with photographer, date, source and wallpaper action details" loading="lazy"><figcaption><small>03 · View</small>Immersive photo viewer and image information</figcaption></figure>
+<figure class="shot"><img src="/assets/drishyam-04.webp" alt="Full-screen abstract photograph displayed in Drishyam" loading="lazy"><figcaption><small>04 · Full screen</small>Photography takes centre stage</figcaption></figure>
+<figure class="shot"><img src="/assets/drishyam-05.webp" alt="Explore photos menu showing India, Latest, Hot and Top sorting choices" loading="lazy"><figcaption><small>05 · Explore</small>Photo discovery and feed sorting</figcaption></figure>
+<figure class="shot"><img src="/assets/drishyam-06.webp" alt="Wallpaper destination chooser with home screen, lock screen and both options" loading="lazy"><figcaption><small>06 · Make it yours</small>Wallpaper destination selection</figcaption></figure>
+<figure class="shot"><img src="/assets/drishyam-07.webp" alt="Drishyam Our Story page with personal photographs and editorial captions" loading="lazy"><figcaption><small>07 · Our Story</small>The people and moments behind the project</figcaption></figure>
+<figure class="shot"><img src="/assets/drishyam-08.webp" alt="Drishyam settings quick actions and Our Story feature card" loading="lazy"><figcaption><small>08 · About the makers</small>Our Story card and settings quick actions</figcaption></figure>
+<figure class="shot"><img src="/assets/drishyam-09.webp" alt="Drishyam Appearance settings with System, Dark and Light themes and glass effects controls" loading="lazy"><figcaption><small>09 · Personalise</small>Appearance, themes and visual effects</figcaption></figure>
+<figure class="shot"><img src="/assets/drishyam-10.webp" alt="Drishyam Settings home with personalisation options and version information" loading="lazy"><figcaption><small>10 · Settings</small>Settings hub and personalisation entry points</figcaption></figure>
+</div>
+<div class="story-note">Our Story imagery is included as requested by the developer. The photographs are presented as part of the app's own story experience.</div>
+</section>
+<section id="technology"><div class="label">03 / Built with</div><h2>Tools behind the experience.</h2><p class="copy">Drishyam is an Android project built with a native mobile development workflow. The work combines Kotlin application logic, Android Views and Material Components, with GitHub-based source control and automated build workflows.</p><div class="tech"><span>Kotlin</span><span>Android Views</span><span>Material Components</span><span>Unsplash API</span><span>Wikimedia Commons</span><span>GitHub</span><span>GitHub Actions</span><span>Cloudflare Workers</span></div></section>
+<section id="credits"><div class="label">04 / Project links</div><h2>Follow the project.</h2><p class="copy">Explore the source, follow development and see the wider work behind Drishyam.</p><div class="hero-actions"><a class="link" href="https://github.com/savanjee-dev/Drishyam" target="_blank" rel="noopener noreferrer">Drishyam on GitHub ↗</a><a class="link" href="/">Savan Jee portfolio ↗</a></div></section>
+</main>
+<footer><span>© 2026 Savan Jee</span><span>Drishyam · Made with curiosity.</span><a class="link" href="/">Back to portfolio ↑</a></footer>
+</div></body></html>
