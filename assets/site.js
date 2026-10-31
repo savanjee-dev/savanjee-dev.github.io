@@ -1,1 +1,7 @@
-(()=>{const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const brand=document.querySelector('.brand');if(brand)brand.addEventListener('click',e=>{e.preventDefault();history.replaceState(null,'',location.pathname+location.search);window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});setTimeout(()=>location.reload(),reduce?0:180)});document.querySelectorAll('a[href]').forEach(a=>{const u=new URL(a.href,location.href);if(reduce||u.origin!==location.origin||u.pathname===location.pathname||a.target==='_blank'||a.hash)return;a.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0)return;e.preventDefault();const f=document.createElement('i');f.className='portal-flare';f.style.left=(e.clientX||innerWidth/2)+'px';f.style.top=(e.clientY||innerHeight/2)+'px';document.body.appendChild(f);setTimeout(()=>location.href=u.href,330)})})})();
+(()=>{
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const path=location.pathname.replace(/index\\.html$/,'').replace(/\\/$/,'')||'/';
+ document.querySelectorAll('.nav a[href]').forEach(a=>{const target=new URL(a.href,location.href).pathname.replace(/index\\.html$/,'').replace(/\\/$/,'')||'/';if(target===path)a.setAttribute('aria-current','page');});
+ document.querySelectorAll('a[href]').forEach(a=>{const u=new URL(a.href,location.href);if(u.origin===location.origin&&u.pathname===location.pathname&&u.hash){a.addEventListener('click',()=>{});}});
+ const main=document.querySelector('main');if(main&&!reduce){main.classList.add('page-enter');}
+})();
