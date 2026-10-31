@@ -5,3 +5,5 @@
  document.querySelectorAll('.nav a[href]').forEach(a=>{const target=clean(new URL(a.href,location.href).pathname);if(target===current)a.setAttribute('aria-current','page');});
  const main=document.querySelector('main');if(main&&!reduce)main.classList.add('page-enter');
 })();
+// Make archive return controls explicit and reliable on touch devices.
+document.querySelectorAll("[data-home-link]").forEach(link=>{link.addEventListener("click",event=>{event.preventDefault();window.location.assign("/");});});
