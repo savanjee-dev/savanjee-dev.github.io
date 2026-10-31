@@ -42,3 +42,8 @@ main.page-enter{animation:page-enter .18s ease-out both}
 .brand-mark-fallback{display:block;width:34px;height:34px;flex:0 0 34px;overflow:visible;filter:drop-shadow(0 2px 7px rgba(214,189,145,.13))}
 @media(max-width:560px){.brand-mark-fallback{width:30px;height:30px;flex-basis:30px}}
 .portal-flare{display:none!important}
+
+/* Wordmark punctuation: keep the red dot tight to SAVAN and clearly visible. */
+.brand-dot,.brand-name .brand-dot{color:#e34b45!important;font-size:1.38em;line-height:0;letter-spacing:0;margin-left:-.12em;vertical-align:baseline}
+/* Archive return control remains an obvious, tappable route to the current homepage. */
+.back,[data-home-link]{position:relative;z-index:3;display:inline-flex;align-items:center;min-height:44px;padding:9px 0;cursor:pointer;pointer-events:auto}
