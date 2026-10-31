@@ -3,3 +3,20 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}body{background:radial-grad
 body[data-atmosphere="monsoon"]{background:radial-gradient(ellipse at 82% 8%,rgba(169,157,119,.10),transparent 34%),radial-gradient(ellipse at 8% 62%,rgba(65,111,76,.17),transparent 44%),linear-gradient(145deg,#10140f,#12150f 58%,#14150f);background-attachment:fixed}
 body[data-atmosphere="sandstone"]{background:radial-gradient(ellipse at 84% 12%,rgba(193,139,87,.14),transparent 36%),radial-gradient(ellipse at 5% 72%,rgba(127,89,57,.10),transparent 43%),linear-gradient(145deg,#15120f,#17140f 58%,#12120f);background-attachment:fixed}
 body[data-atmosphere="cosmic"]{background:radial-gradient(ellipse at 78% 12%,rgba(102,113,153,.16),transparent 38%),radial-gradient(ellipse at 10% 68%,rgba(91,91,132,.12),transparent 43%),linear-gradient(145deg,#101116,#12131a 58%,#11120f);background-attachment:fixed}
+
+/* Scroll-performance pass: keep atmosphere, remove continuously composited layers. */
+body,
+body[data-atmosphere="monsoon"],
+body[data-atmosphere="sandstone"],
+body[data-atmosphere="cosmic"]{background-attachment:scroll}
+body:before{position:absolute!important;inset:0 0 auto!important;height:100%!important;z-index:0!important;mix-blend-mode:normal!important;opacity:.28!important}
+body:after{content:none!important;animation:none!important}
+.topbar{background:var(--bg)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.project-feature{box-shadow:0 12px 32px rgba(0,0,0,.16),inset 0 1px rgba(240,238,230,.04)}
+.contact-panel{box-shadow:inset 0 1px rgba(240,238,230,.04),0 12px 30px rgba(0,0,0,.12)}
+@media(max-width:800px){
+  .project-feature{box-shadow:inset 0 1px rgba(240,238,230,.04)}
+  .contact-panel{box-shadow:inset 0 1px rgba(240,238,230,.04)}
+  .topbar{background:var(--bg)!important}
+}
+@media(prefers-reduced-motion:reduce){body:before{display:none!important}}
