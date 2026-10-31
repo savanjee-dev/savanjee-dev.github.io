@@ -80,7 +80,26 @@ function mount(canvas,options){
  const instance={pause,resume,dispose};activeInstance=instance;return instance;
 }
 window.Drishyam3DLoader={mount,pause(){if(activeInstance)activeInstance.pause();},resume(){if(activeInstance)activeInstance.resume();},dispose(){if(activeInstance)activeInstance.dispose();activeInstance=null;}};
-function mountPageBrand(){\n const canvas=document.querySelector("[data-drishyam-brand]");\n if(!canvas||!window.THREE||!THREE.SVGLoader)return;\n const theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";\n mount(canvas,{theme:theme,reducedMotion:false,duration:5200});\n}\nfunction mountPageLoader(){
+function mountPageBrand(){
+ const canvas=document.querySelector("[data-drishyam-brand]");
+ if(!canvas)return;
+ const theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
+ if(window.THREE&&THREE.SVGLoader&&THREE.WebGLRenderer){
+  const instance=mount(canvas,{theme:theme,duration:5200});
+  if(instance)return;
+ }
+ const fallback=document.createElementNS("http://www.w3.org/2000/svg","svg");
+ fallback.setAttribute("viewBox","0 0 1024 1024");
+ fallback.setAttribute("class",canvas.className+" brand-mark-fallback");
+ fallback.setAttribute("aria-hidden","true");
+ const path=document.createElementNS("http://www.w3.org/2000/svg","path");
+ path.setAttribute("d",PATH_DATA);
+ path.setAttribute("fill",theme==="light"?"#080808":"#f4f4f1");
+ path.setAttribute("fill-rule","evenodd");
+ fallback.appendChild(path);
+ canvas.replaceWith(fallback);
+}
+function mountPageLoader(){
  const canvas=document.querySelector("[data-drishyam-loader]");
  const overlay=document.getElementById("drishyam-loader");
  if(!canvas||!overlay)return;
