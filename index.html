@@ -37,12 +37,13 @@ footer{padding:28px 0 38px;border-top:1px solid var(--line);display:flex;justify
 @media(max-width:560px){.shell{width:calc(100% - 36px)}.topbar{height:70px}.brand{font-size:13px}.brand-mark{width:27px;height:27px}.nav{gap:14px;font-size:9px}.nav a:nth-child(2),.nav a:nth-child(3){display:none}.nav .nav-cta{display:block;padding:8px 10px;margin-top:-8px}.hero{padding:82px 0 66px}.hero h1{font-size:clamp(52px,15vw,76px)}.hero-copy{font-size:15px}.hero-actions{gap:18px}.section{padding:64px 0}.section-head{display:block}.section-note{margin-top:17px}.project-visual{min-height:280px;padding:24px}.project-visual img{width:min(65%,210px)}.project-copy{padding:29px 24px 34px}.values{grid-template-columns:1fr}.value{padding:18px}.stack-grid{grid-template-columns:repeat(2,1fr)}.stack-item{padding:18px;min-height:105px}.contact-panel{display:block;padding:28px 23px}.contact-panel .button{margin-top:25px}footer{align-items:flex-start;flex-direction:column;gap:14px}.footer-links{gap:18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 </style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
-<body>
+<body data-atmosphere="monsoon">
 <div class="shell">
 <header class="topbar">
 <a class="brand" href="/" aria-label="Savan Jee home"><svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3.5 43 14.4v19.2L24 44.5 5 33.6V14.4L24 3.5Z" fill="none" stroke="currentColor" stroke-width="3.1" stroke-linejoin="round"/><path d="M31.5 15.5H20.2l-5.4 5.1 16.4 7.3-5.4 5.1H16.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>SAVAN<span class="brand-dot">.</span></a>
-<nav class="nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#stack">Toolkit</a><a class="nav-cta" href="#contact">Let's talk ↗</a></nav>
+<nav class="nav" aria-label="Main navigation"><a href="/projects/">Projects</a><a href="/about/">About</a><a href="/projects/drishyam/">Drishyam</a><a class="nav-cta" href="/contact/">Contact ↗</a></nav>
 </header>
 <main>
 <section class="hero" aria-labelledby="intro-title">
@@ -58,5 +59,6 @@ footer{padding:28px 0 38px;border-top:1px solid var(--line);display:flex;justify
 </main>
 <footer><span>© 2026 Savan Jee</span><span class="footer-note">Made with curiosity.</span><div class="footer-links"><a href="https://github.com/savanjee-dev" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="/archive/">Archive ↗</a></div></footer>
 </div>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
