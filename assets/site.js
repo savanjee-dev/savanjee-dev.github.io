@@ -1,7 +1,7 @@
 (()=>{
  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- const path=location.pathname.replace(/index\\.html$/,'').replace(/\\/$/,'')||'/';
- document.querySelectorAll('.nav a[href]').forEach(a=>{const target=new URL(a.href,location.href).pathname.replace(/index\\.html$/,'').replace(/\\/$/,'')||'/';if(target===path)a.setAttribute('aria-current','page');});
- document.querySelectorAll('a[href]').forEach(a=>{const u=new URL(a.href,location.href);if(u.origin===location.origin&&u.pathname===location.pathname&&u.hash){a.addEventListener('click',()=>{});}});
- const main=document.querySelector('main');if(main&&!reduce){main.classList.add('page-enter');}
+ const clean=p=>{if(p.endsWith('/index.html'))p=p.slice(0,-10);if(p.length>1&&p.endsWith('/'))p=p.slice(0,-1);return p||'/';};
+ const current=clean(location.pathname);
+ document.querySelectorAll('.nav a[href]').forEach(a=>{const target=clean(new URL(a.href,location.href).pathname);if(target===current)a.setAttribute('aria-current','page');});
+ const main=document.querySelector('main');if(main&&!reduce)main.classList.add('page-enter');
 })();
