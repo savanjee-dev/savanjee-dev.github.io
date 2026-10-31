@@ -8,97 +8,47 @@
   <title>Savan Jee — Independent Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:dark;--bg:#211a15;--text:#f2e9dc;--muted:#c0b09d;--gold:#c2a47b;--rule:rgba(220,194,158,.22)}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:28px}
-    body{margin:0;color:var(--text);font:16px/1.75 "DM Sans",sans-serif;background-color:var(--bg);background-image:radial-gradient(ellipse at 78% 8%,rgba(181,133,76,.19),transparent 34%),radial-gradient(ellipse at 8% 62%,rgba(122,91,59,.15),transparent 42%),linear-gradient(180deg,rgba(15,12,10,.24),rgba(15,12,10,.72)),repeating-linear-gradient(0deg,transparent 0 178px,rgba(8,6,5,.35) 179px 181px),repeating-linear-gradient(90deg,transparent 0 318px,rgba(8,6,5,.27) 319px 321px),repeating-linear-gradient(135deg,rgba(255,239,214,.018) 0 1px,transparent 1px 5px),linear-gradient(115deg,#3b2e23,#211a15 55%,#35271d);background-attachment:fixed}
-    a{color:inherit;text-decoration:none}
-    .wrap{width:min(1080px,calc(100% - 56px));margin:auto}
-    header{padding:28px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule)}
-    .brand{font-weight:700;letter-spacing:.18em;font-size:13px}.brand span{color:var(--gold)}
-    nav{display:flex;gap:32px;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-    nav a,.text-link{transition:color .2s ease}nav a:hover,.text-link:hover{color:#e5c89e}
-    .hero{padding:clamp(100px,15vw,170px) 0 125px;max-width:900px}
-    .eyebrow,.section-label{color:var(--gold);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
-    h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:500}
-    h1{font-size:clamp(52px,8.5vw,100px);line-height:1.04;letter-spacing:-.035em;margin:24px 0 28px;max-width:900px}
-    .hero p{max-width:620px;color:#d0c2b1;font-size:18px;line-height:1.85}
-    .actions{display:flex;gap:30px;flex-wrap:wrap;margin-top:38px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:0 0 7px;border:0;border-bottom:1px solid rgba(194,164,123,.65);border-radius:0;background:none;color:#e7d8c4;font-weight:600;font-size:13px;letter-spacing:.04em}
-    .btn.primary{color:var(--gold);background:none;border-color:var(--gold)}
-    .btn:hover{color:#fff;border-color:#fff}
-    section{padding:76px 0 82px;border-top:1px solid var(--rule)}
-    h2{font-size:clamp(34px,5vw,48px);letter-spacing:-.025em;margin:12px 0 22px}
-    .copy{color:#c9bba9;max-width:700px;font-size:16px}
-    .project{margin-top:34px;padding:28px 0 34px;border:0;border-top:1px solid rgba(197,167,126,.42);border-bottom:1px solid rgba(197,167,126,.25);border-radius:0;background:transparent;display:flex;justify-content:space-between;gap:24px;align-items:flex-start;box-shadow:none}
-    .project h3{font-size:clamp(30px,4vw,40px);margin:0 0 10px}
-    .tag{display:block;color:var(--gold);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:13px;font-weight:700}
-    .project p{margin:0;color:#c9bba9;max-width:650px}
-    .project-mark{color:var(--gold);font-size:28px;font-family:Georgia,serif;padding:4px 0}
-    footer{padding:30px 0 42px;color:#ad9c88;font-size:11px;letter-spacing:.04em;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid var(--rule)}
-    @media(max-width:600px){.wrap{width:calc(100% - 36px)}header{padding:22px 0}nav{gap:17px;font-size:10px}.hero{padding:92px 0 86px}.hero p{font-size:16px}.actions{gap:24px}section{padding:58px 0 64px}.project{padding:24px 0}.project-mark{font-size:23px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-
-    /* Living temple atmosphere: warm stone, sunlight, foliage and drifting dust */
-    body{position:relative;isolation:isolate;background-image:
-      radial-gradient(ellipse at 78% 12%,rgba(242,194,119,.25),transparent 30%),
-      radial-gradient(ellipse at 12% 72%,rgba(128,91,54,.18),transparent 42%),
-      linear-gradient(180deg,rgba(24,17,12,.28),rgba(18,13,10,.74)),
-      repeating-linear-gradient(0deg,transparent 0 178px,rgba(8,6,5,.28) 179px 181px),
-      repeating-linear-gradient(90deg,transparent 0 318px,rgba(8,6,5,.2) 319px 321px),
-      repeating-linear-gradient(135deg,rgba(255,239,214,.018) 0 1px,transparent 1px 5px),
-      linear-gradient(115deg,#493727,#241b14 55%,#3a2a1e)}
-    body::before{content:"";position:fixed;z-index:-1;inset:-12%;pointer-events:none;opacity:.48;
-      background:
-        radial-gradient(ellipse at 83% 13%,rgba(255,218,157,.32),transparent 22%),
-        radial-gradient(ellipse at 72% 24%,rgba(19,24,13,.44),transparent 24%),
-        radial-gradient(ellipse at 91% 33%,rgba(15,20,12,.42),transparent 18%),
-        repeating-linear-gradient(118deg,transparent 0 42px,rgba(14,19,12,.16) 43px 47px,transparent 48px 86px);
-      filter:blur(13px);transform:translate3d(0,0,0);animation:canopy-drift 30s ease-in-out infinite alternate}
-    body::after{content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;opacity:.34;
-      background-image:
-        radial-gradient(circle,rgba(255,226,177,.85) 0 1px,transparent 1.8px),
-        radial-gradient(circle,rgba(225,190,139,.7) 0 1px,transparent 2px),
-        radial-gradient(circle,rgba(255,239,211,.55) 0 .8px,transparent 1.8px);
-      background-size:173px 191px,239px 227px,311px 283px;
-      background-position:12px 28px,84px 112px,170px 54px;
-      animation:dust-drift 42s linear infinite}
-    @keyframes canopy-drift{0%{transform:translate3d(-1.5%,0,0) scale(1)}50%{transform:translate3d(1%,1.2%,0) scale(1.025)}100%{transform:translate3d(2.2%,-.8%,0) scale(1.04)}}
-    @keyframes dust-drift{0%{transform:translate3d(-1%,0,0)}50%{transform:translate3d(1.2%,-1.5%,0)}100%{transform:translate3d(2%, -3%,0)}}
-    @keyframes link-glide{0%{background-position:100% 100%}100%{background-position:0 100%}}
-    @keyframes arrow-drift{0%,100%{transform:translate(0,0)}50%{transform:translate(3px,-3px)}}
-    nav a{position:relative;padding:8px 0;transition:color .3s ease,letter-spacing .3s ease}
-    nav a::after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:linear-gradient(90deg,var(--gold),rgba(242,220,188,.9));transition:right .35s cubic-bezier(.2,.75,.25,1)}
-    nav a:hover{color:#f4e5d0;letter-spacing:.13em}
-    nav a:hover::after{right:0}
-    .btn{position:relative;transition:color .3s ease,border-color .3s ease,letter-spacing .3s ease}
-    .btn span{display:inline-block;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
-    .btn:hover{letter-spacing:.075em}
-    .btn:hover span{animation:arrow-drift .8s ease-in-out infinite}
-    .text-link{display:inline-block;position:relative;padding:4px 0 7px;border-bottom:1px solid rgba(194,164,123,.38);transition:color .3s ease,border-color .3s ease,transform .3s ease}
-    .text-link:hover{color:#f4e5d0;border-color:var(--gold);transform:translateX(4px)}
-    .project{transition:border-color .35s ease}
-    .project:hover{border-color:rgba(226,194,151,.65)}
-    .project-mark{display:inline-block;transition:transform .35s ease,color .35s ease}
-    .project:hover .project-mark{transform:translate(4px,-4px);color:#f0d5ad}
-    @media(prefers-reduced-motion:reduce){body::before,body::after{animation:none!important}.btn:hover span{animation:none!important}nav a,.btn,.text-link,.project,.project-mark{transition:none!important}}
-
+:root{color-scheme:dark;--bg:#211a15;--text:#eee5d8;--muted:#b9aa98;--gold:#b99a70;--rule:rgba(220,194,158,.2)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}
+body{margin:0;color:var(--text);font:16px/1.75 "Manrope","DM Sans",sans-serif;background:#211a15;isolation:isolate;position:relative}
+body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 78% 34%,rgba(113,79,49,.17),transparent 44%),linear-gradient(105deg,rgba(18,14,11,.9),rgba(39,28,20,.88) 52%,rgba(22,17,13,.94)),repeating-linear-gradient(0deg,rgba(222,195,158,.018) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgba(0,0,0,.035) 0 1px,transparent 1px 5px)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:radial-gradient(rgba(237,219,191,.55) .55px,transparent .8px);background-size:5px 5px}
+a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 56px));margin:auto}
+header{padding:25px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule)}
+.brand{display:inline-flex;align-items:center;gap:13px;color:#eee5d8}.brand-mark{width:34px;height:34px;flex:none}.brand-name{font-family:"Manrope",sans-serif;font-weight:700;letter-spacing:.15em;font-size:14px}.brand-name span{color:var(--gold)}
+nav{display:flex;gap:32px;color:var(--muted);font:500 12px "Manrope",sans-serif;letter-spacing:.07em;text-transform:uppercase}
+nav a{position:relative;padding:8px 0;transition:color .25s ease}nav a:after{content:"";position:absolute;left:0;right:100%;bottom:1px;height:1px;background:var(--gold);transition:right .3s ease}nav a:hover{color:#f1e8dc}nav a:hover:after{right:0}
+.hero{padding:clamp(94px,13vw,145px) 0 110px;max-width:790px}
+.eyebrow,.section-label{color:#c2a77f;font:600 10px "Manrope",sans-serif;letter-spacing:.2em;text-transform:uppercase}.eyebrow{display:flex;align-items:center;gap:14px}.eyebrow i{display:block;width:30px;height:1px;background:rgba(194,167,127,.7)}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:500}h1{font-size:clamp(48px,7.4vw,82px);line-height:1.1;letter-spacing:-.035em;margin:24px 0 18px;max-width:760px;color:#eee5d8;text-shadow:none}
+.lotus-rule{display:flex;align-items:center;gap:12px;width:min(410px,90%);margin:27px 0 26px;color:#b99a70}.lotus-rule span{height:1px;flex:1;background:rgba(185,154,112,.62)}.lotus-rule svg{width:34px;height:27px;flex:none}
+.hero p{max-width:620px;color:#c9bdaf;font-size:16px;line-height:1.85}
+.actions{display:flex;gap:32px;flex-wrap:wrap;margin-top:36px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:0 0 8px;border:0;border-bottom:1px solid rgba(185,154,112,.58);border-radius:0;background:none;color:#e6dccf;font:600 13px "Manrope",sans-serif;letter-spacing:.01em;transition:color .25s ease,border-color .25s ease}
+.btn svg{width:22px;height:22px;color:#c2a77f}.btn span{display:inline-block;transition:transform .25s ease;color:#c2a77f;font-size:18px}.btn:hover{color:#fff;border-color:#d0b58e}.btn:hover span{transform:translate(3px,-2px)}
+section{padding:72px 0 78px;border-top:1px solid var(--rule)}h2{font-size:clamp(34px,5vw,46px);letter-spacing:-.025em;margin:12px 0 22px}.copy{color:#c9bdaf;max-width:700px;font-size:15px}
+.project{margin-top:30px;padding:26px 0 32px;border:0;border-top:1px solid rgba(197,167,126,.34);border-bottom:1px solid rgba(197,167,126,.2);border-radius:0;background:transparent;display:flex;justify-content:space-between;gap:24px;align-items:flex-start}
+.project h3{font-size:clamp(30px,4vw,38px);margin:0 0 10px}.tag{display:block;color:var(--gold);font:600 10px "Manrope",sans-serif;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}.project p{margin:0;color:#c9bdaf;max-width:650px;font-size:14px}.project-mark{color:var(--gold);font-size:26px;font-family:Georgia,serif;padding:4px 0;transition:transform .25s ease}.project:hover .project-mark{transform:translate(3px,-3px)}
+.text-link{display:inline-block;padding:3px 0 6px;border-bottom:1px solid rgba(185,154,112,.42);transition:color .25s ease,border-color .25s ease}.text-link:hover{color:#fff;border-color:var(--gold)}
+footer{padding:28px 0 40px;color:#a99885;font:11px "Manrope",sans-serif;letter-spacing:.03em;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid var(--rule)}
+@media(max-width:600px){.wrap{width:calc(100% - 36px)}header{padding:20px 0}.brand-mark{width:30px;height:30px}nav{gap:16px;font-size:10px}.hero{padding:82px 0 78px}.hero p{font-size:15px}.actions{gap:24px}section{padding:55px 0 60px}.project{padding:22px 0}.eyebrow{font-size:9px;gap:9px}.eyebrow i{width:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <a class="brand" href="#">SAVAN<span>.</span></a>
+      <a class="brand" href="#" aria-label="Savan Jee home"><svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3.5 43 14.4v19.2L24 44.5 5 33.6V14.4L24 3.5Z" fill="none" stroke="currentColor" stroke-width="3.1" stroke-linejoin="round"/><path d="M31.5 15.5H20.2l-5.4 5.1 16.4 7.3-5.4 5.1H16.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="brand-name">SAVAN<span>.</span></span></a>
       <nav aria-label="Main navigation"><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact</a></nav>
     </header>
     <main>
       <div class="hero">
-        <div class="eyebrow">Independent developer · India</div>
-        <h1>Building digital experiences with curiosity.</h1>
+        <div class="eyebrow"><i></i> Independent developer · India <i></i></div>
+        <h1>Building digital experiences with curiosity.</h1><div class="lotus-rule" aria-hidden="true"><span></span><svg viewBox="0 0 44 34"><path d="M22 29C10 24 9 15 15 5c5 5 7 11 7 17 0-8 3-15 9-19 4 10 1 20-9 26Zm0 0C7 30 3 22 3 17c8 0 14 4 19 12Zm0 0c5-8 11-12 19-12 0 5-4 13-19 12Z" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/></svg><span></span></div>
         <p>I'm Savan Jee, an independent developer interested in Android apps, thoughtful interface design, and turning ideas into useful products.</p>
-        <div class="actions"><a class="btn primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a><a class="btn" href="#about">A little about me <span aria-hidden="true">↓</span></a></div>
+        <div class="actions"><a class="btn primary" href="#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 9 5-9 5-9-5 9-5Zm-9 10 9 5 9-5M3 17l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/></svg>Explore my work <span aria-hidden="true">→</span></a><a class="btn" href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="1.35"/><path d="M4 21v-2a8 8 0 0 1 16 0v2" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg>A little about me <span aria-hidden="true">→</span></a></div>
       </div>
       <section id="about">
         <div class="section-label">01 / About</div>
