@@ -40,6 +40,51 @@
     footer{padding:30px 0 42px;color:#ad9c88;font-size:11px;letter-spacing:.04em;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid var(--rule)}
     @media(max-width:600px){.wrap{width:calc(100% - 36px)}header{padding:22px 0}nav{gap:17px;font-size:10px}.hero{padding:92px 0 86px}.hero p{font-size:16px}.actions{gap:24px}section{padding:58px 0 64px}.project{padding:24px 0}.project-mark{font-size:23px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+    /* Living temple atmosphere: warm stone, sunlight, foliage and drifting dust */
+    body{position:relative;isolation:isolate;background-image:
+      radial-gradient(ellipse at 78% 12%,rgba(242,194,119,.25),transparent 30%),
+      radial-gradient(ellipse at 12% 72%,rgba(128,91,54,.18),transparent 42%),
+      linear-gradient(180deg,rgba(24,17,12,.28),rgba(18,13,10,.74)),
+      repeating-linear-gradient(0deg,transparent 0 178px,rgba(8,6,5,.28) 179px 181px),
+      repeating-linear-gradient(90deg,transparent 0 318px,rgba(8,6,5,.2) 319px 321px),
+      repeating-linear-gradient(135deg,rgba(255,239,214,.018) 0 1px,transparent 1px 5px),
+      linear-gradient(115deg,#493727,#241b14 55%,#3a2a1e)}
+    body::before{content:"";position:fixed;z-index:-1;inset:-12%;pointer-events:none;opacity:.48;
+      background:
+        radial-gradient(ellipse at 83% 13%,rgba(255,218,157,.32),transparent 22%),
+        radial-gradient(ellipse at 72% 24%,rgba(19,24,13,.44),transparent 24%),
+        radial-gradient(ellipse at 91% 33%,rgba(15,20,12,.42),transparent 18%),
+        repeating-linear-gradient(118deg,transparent 0 42px,rgba(14,19,12,.16) 43px 47px,transparent 48px 86px);
+      filter:blur(13px);transform:translate3d(0,0,0);animation:canopy-drift 30s ease-in-out infinite alternate}
+    body::after{content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;opacity:.34;
+      background-image:
+        radial-gradient(circle,rgba(255,226,177,.85) 0 1px,transparent 1.8px),
+        radial-gradient(circle,rgba(225,190,139,.7) 0 1px,transparent 2px),
+        radial-gradient(circle,rgba(255,239,211,.55) 0 .8px,transparent 1.8px);
+      background-size:173px 191px,239px 227px,311px 283px;
+      background-position:12px 28px,84px 112px,170px 54px;
+      animation:dust-drift 42s linear infinite}
+    @keyframes canopy-drift{0%{transform:translate3d(-1.5%,0,0) scale(1)}50%{transform:translate3d(1%,1.2%,0) scale(1.025)}100%{transform:translate3d(2.2%,-.8%,0) scale(1.04)}}
+    @keyframes dust-drift{0%{transform:translate3d(-1%,0,0)}50%{transform:translate3d(1.2%,-1.5%,0)}100%{transform:translate3d(2%, -3%,0)}}
+    @keyframes link-glide{0%{background-position:100% 100%}100%{background-position:0 100%}}
+    @keyframes arrow-drift{0%,100%{transform:translate(0,0)}50%{transform:translate(3px,-3px)}}
+    nav a{position:relative;padding:8px 0;transition:color .3s ease,letter-spacing .3s ease}
+    nav a::after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:linear-gradient(90deg,var(--gold),rgba(242,220,188,.9));transition:right .35s cubic-bezier(.2,.75,.25,1)}
+    nav a:hover{color:#f4e5d0;letter-spacing:.13em}
+    nav a:hover::after{right:0}
+    .btn{position:relative;transition:color .3s ease,border-color .3s ease,letter-spacing .3s ease}
+    .btn span{display:inline-block;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+    .btn:hover{letter-spacing:.075em}
+    .btn:hover span{animation:arrow-drift .8s ease-in-out infinite}
+    .text-link{display:inline-block;position:relative;padding:4px 0 7px;border-bottom:1px solid rgba(194,164,123,.38);transition:color .3s ease,border-color .3s ease,transform .3s ease}
+    .text-link:hover{color:#f4e5d0;border-color:var(--gold);transform:translateX(4px)}
+    .project{transition:border-color .35s ease}
+    .project:hover{border-color:rgba(226,194,151,.65)}
+    .project-mark{display:inline-block;transition:transform .35s ease,color .35s ease}
+    .project:hover .project-mark{transform:translate(4px,-4px);color:#f0d5ad}
+    @media(prefers-reduced-motion:reduce){body::before,body::after{animation:none!important}.btn:hover span{animation:none!important}nav a,.btn,.text-link,.project,.project-mark{transition:none!important}}
+
   </style>
 </head>
 <body>
