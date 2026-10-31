@@ -55,7 +55,7 @@ function mount(canvas,options){
   width=w;height=h;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();
  }
  resize();
- const duration=reduced?7200:1800;
+ const duration=Number(options.duration)|| (reduced?7200:1800);
  let angle=0,last=0,frame=0,running=true,ready=false;
  function render(now){
   if(!running)return;
@@ -80,7 +80,7 @@ function mount(canvas,options){
  const instance={pause,resume,dispose};activeInstance=instance;return instance;
 }
 window.Drishyam3DLoader={mount,pause(){if(activeInstance)activeInstance.pause();},resume(){if(activeInstance)activeInstance.resume();},dispose(){if(activeInstance)activeInstance.dispose();activeInstance=null;}};
-function mountPageLoader(){
+function mountPageBrand(){\n const canvas=document.querySelector("[data-drishyam-brand]");\n if(!canvas||!window.THREE||!THREE.SVGLoader)return;\n const theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";\n mount(canvas,{theme:theme,reducedMotion:false,duration:5200});\n}\nfunction mountPageLoader(){
  const canvas=document.querySelector("[data-drishyam-loader]");
  const overlay=document.getElementById("drishyam-loader");
  if(!canvas||!overlay)return;
@@ -92,5 +92,5 @@ function mountPageLoader(){
  if(!loaded)window.addEventListener("load",()=>{loaded=true;maybeHide();},{once:true});else maybeHide();
  setTimeout(hide,2800);
 }
-if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mountPageLoader,{once:true});else mountPageLoader();
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",()=>{mountPageLoader();mountPageBrand();},{once:true});else{mountPageLoader();mountPageBrand();}
 })();
