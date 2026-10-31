@@ -20,3 +20,10 @@ body:after{content:none!important;animation:none!important}
   .topbar{background:var(--bg)!important}
 }
 @media(prefers-reduced-motion:reduce){body:before{display:none!important}}
+
+/* Persistent Drishyam identity: a live, extruded 3D mark in every page header. */
+.brand{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;flex-shrink:0}
+.brand-drishyam-mark{display:block;width:34px;height:34px;flex:0 0 34px;overflow:visible;transform-origin:center;animation:drishyam-mark-arrive .72s cubic-bezier(.18,.72,.22,1) both;filter:drop-shadow(0 2px 7px rgba(214,189,145,.13))}
+@keyframes drishyam-mark-arrive{0%{opacity:0;transform:scale(.08) rotate(-24deg)}65%{opacity:1;transform:scale(1.12) rotate(5deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@media(max-width:560px){.brand-drishyam-mark{width:30px;height:30px;flex-basis:30px}}
+@media(prefers-reduced-motion:reduce){.brand-drishyam-mark{animation:none}}
