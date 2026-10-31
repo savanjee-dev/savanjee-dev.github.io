@@ -38,3 +38,7 @@ main.page-enter{animation:page-enter .18s ease-out both}
 @media(max-width:760px){.topbar{height:auto;min-height:72px;align-items:center;gap:10px;padding:10px 0;flex-wrap:wrap}.nav{width:100%;justify-content:space-between;gap:2px 4px}.nav a{padding:8px 7px;font-size:9px}.brand{min-height:40px}}
 @media(max-width:390px){.nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));text-align:center}.nav a{justify-content:center}}
 @media(prefers-reduced-motion:reduce){main.page-enter{animation:none}}
+
+.brand-mark-fallback{display:block;width:34px;height:34px;flex:0 0 34px;overflow:visible;filter:drop-shadow(0 2px 7px rgba(214,189,145,.13))}
+@media(max-width:560px){.brand-mark-fallback{width:30px;height:30px;flex-basis:30px}}
+.portal-flare{display:none!important}
