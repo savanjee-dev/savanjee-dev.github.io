@@ -310,13 +310,43 @@ footer:before{content:"";position:absolute;left:-5vw;right:-5vw;top:-45px;height
 </main>
 <footer><div class="foot-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a><a href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">JustWatch India ↗</a></div><div class="footer-signature"><div class="footer-made">Made with ♥️</div><div class="footer-wordmark-group"><div class="footer-brand"><span class="brand-word">UNIVERSE<span class="trademark-dot">.</span></span></div><div class="footer-by">by Savan Jee</div></div></div><div style="margin-top:8px">Movie artwork and trademarks belong to their respective rights holders. UNIVERSE is an independent discovery guide.</div></footer>
 </div>
-<script>(()=>{const slides=[
-{title:'KALKI <span>2898 AD</span>',meta:['Action','Sci-Fi','Drama','2024'],desc:'In a dystopian future, the final battle for humanity’s survival begins with the birth of Kalki.',img:'https://images.filmibeat.com/img/2024/06/kalki-2898-ad-1718261882.jpg',q:'Kalki 2898 AD'},
-{title:'PUSHPA <span>THE RULE</span>',meta:['Action','Crime','Drama','2024'],desc:'A fearless rise, a powerful empire, and a battle for control.',img:'https://images.filmibeat.com/img/2024/12/pushpa-2-the-rule-1733302517.jpg',q:'Pushpa 2 The Rule'},
-{title:'STREE <span>2</span>',meta:['Horror','Comedy','Mystery','2024'],desc:'The town is haunted again—and this time, the legend gets bigger.',img:'https://images.filmibeat.com/img/2024/08/stree-2-1723181232.jpg',q:'Stree 2'},
-{title:'DUNE <span>PART TWO</span>',meta:['Sci-Fi','Adventure','Drama','2024'],desc:'A journey across the sands that will change the fate of an empire.',img:'https://images.filmibeat.com/img/2024/03/dune-part-two-1709549188.jpg',q:'Dune Part Two'},
-{title:'MAHAVATAR <span>NARSIMHA</span>',meta:['Animation','Action','Mythology','2025'],desc:'A mythic tale of faith, courage, and the triumph of good over evil.',img:'https://images.filmibeat.com/img/2025/07/mahavatar-narsimha-1751871258.jpg',q:'Mahavatar Narsimha'}];
-const bg=document.getElementById('hero-bg'),title=document.getElementById('hero-title'),meta=document.getElementById('hero-meta'),desc=document.getElementById('hero-description'),watch=document.getElementById('hero-watch'),list=document.getElementById('hero-list'),dots=[...document.querySelectorAll('#hero-dots button')],hero=document.getElementById('hero-carousel');let i=0,t;
-function show(n){i=(n+slides.length)%slides.length;const s=slides[i];title.innerHTML=s.title;meta.innerHTML=s.meta.map(x=>'<span>'+x+'</span>').join('');desc.textContent=s.desc;watch.href=list.href='https://www.justwatch.com/in/search?q='+encodeURIComponent(s.q);bg.style.backgroundImage='linear-gradient(90deg,#080b16ed 0%,#080b16c9 30%,#080b1650 57%,transparent 85%),linear-gradient(0deg,#080b16 0%,transparent 34%),url("'+s.img+'")';dots.forEach((d,j)=>d.classList.toggle('active',j===i))}
-function start(){clearInterval(t);t=setInterval(()=>show(i+1),6000)}
-document.querySelector('.hero-next').addEventListener('click',()=>{show(i+1);start()});document.querySelector('.hero-prev').addEventListener('click',()=>{show(i-1);start()});dots.forEach((d,j)=>d.addEventListener('click',()=>{show(j);start()}));hero.addEventListener('mouseenter',()=>clearInterval(t));hero.addEventListener('mouseleave',start);show(0);start()})();</script></body></html>
+<script>
+(() => {
+ const slides = [
+  {title:'KALKI <span>2898 AD</span>',meta:['Action','Sci-Fi','Drama','2024'],desc:'A futuristic epic where a new avatar rises against the forces shaping humanity’s fate.',img:'https://image.tmdb.org/t/p/original/6Kx1x7V9V1V9V1V9V1V9V1V9V1V.jpg',q:'Kalki 2898 AD'},
+  {title:'PUSHPA <span>THE RULE</span>',meta:['Action','Crime','Drama','2024'],desc:'Pushpa Raj returns, ready to defend his empire and challenge every rival.',img:'https://image.tmdb.org/t/p/original/4m1Au3YkjqsxF8gelY8KpT7M5x5.jpg',q:'Pushpa 2 The Rule'},
+  {title:'STREE <span>2</span>',meta:['Horror','Comedy','Mystery','2024'],desc:'The town’s nightmare returns with a new mystery and a bigger legend.',img:'https://image.tmdb.org/t/p/original/9fR0x7Q4V9V8x7Q4V9V8x7Q4V9V.jpg',q:'Stree 2'},
+  {title:'DUNE <span>PART TWO</span>',meta:['Sci-Fi','Adventure','Drama','2024'],desc:'Paul Atreides embraces his destiny across the vast and dangerous sands of Arrakis.',img:'https://image.tmdb.org/t/p/original/1pdfLvkbY9ohlahvL1e1Z6T9o8s.jpg',q:'Dune Part Two'},
+  {title:'MAHAVATAR <span>NARSIMHA</span>',meta:['Animation','Action','Mythology','2025'],desc:'An animated mythological epic inspired by the powerful story of Narasimha.',img:'https://image.tmdb.org/t/p/original/7qV8G5Y7V8G5Y7V8G5Y7V8G5Y7V.jpg',q:'Mahavatar Narsimha'}
+ ];
+ const hero=document.getElementById('hero-carousel'), bg=document.getElementById('hero-bg'),
+ title=document.getElementById('hero-title'), meta=document.getElementById('hero-meta'),
+ desc=document.getElementById('hero-description'), watch=document.getElementById('hero-watch'),
+ list=document.getElementById('hero-list'), dots=[...document.querySelectorAll('#hero-dots button')];
+ if(!hero||!bg||!title||!meta||!desc||!watch||!list||!dots.length)return;
+ let index=0,timer=null,paused=false;
+ function show(n){
+   index=(n+slides.length)%slides.length; const s=slides[index];
+   title.innerHTML=s.title; meta.innerHTML=s.meta.map(x=>'<span>'+x+'</span>').join('');
+   desc.textContent=s.desc;
+   const target='https://www.justwatch.com/in/search?q='+encodeURIComponent(s.q);
+   watch.href=list.href=target;
+   bg.style.backgroundImage='linear-gradient(90deg,#080b16ed 0%,#080b16c9 30%,#080b1650 57%,transparent 85%),linear-gradient(0deg,#080b16 0%,transparent 34%),url("'+s.img+'")';
+   bg.style.backgroundPosition='center,center,70% 35%';
+   bg.style.backgroundSize='cover,cover,cover';
+   hero.dataset.slide=String(index);
+   dots.forEach((dot,j)=>{dot.classList.toggle('active',j===index);dot.setAttribute('aria-current',j===index?'true':'false')});
+ }
+ function stop(){if(timer){clearInterval(timer);timer=null}}
+ function start(){stop();if(!paused)timer=setInterval(()=>show(index+1),6500)}
+ function pause(){paused=true;stop()}
+ function resume(){paused=false;start()}
+ hero.querySelector('.hero-next')?.addEventListener('click',()=>{show(index+1);start()});
+ hero.querySelector('.hero-prev')?.addEventListener('click',()=>{show(index-1);start()});
+ dots.forEach((dot,j)=>dot.addEventListener('click',()=>{show(j);start()}));
+ hero.addEventListener('mouseenter',pause);hero.addEventListener('mouseleave',resume);
+ hero.addEventListener('focusin',pause);hero.addEventListener('focusout',resume);
+ document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+ show(0);start();
+})();
+</script></body></html>
