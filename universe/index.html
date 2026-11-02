@@ -187,6 +187,24 @@ footer .foot-links{position:relative;z-index:1;gap:22px;margin-bottom:25px}foote
 footer>div:last-child{position:relative;z-index:1;color:#8f93a3;font-size:11px;line-height:1.6;margin-top:16px!important;padding-top:13px;border-top:1px solid #ffffff12}
 @media(max-width:950px){.poster-row,.ott-row{grid-template-columns:repeat(5,minmax(145px,1fr))}.editor-card{aspect-ratio:1.25}}
 @media(max-width:620px){.shell{padding-inline:13px}.hero{height:490px;border-radius:19px}.hero-content{top:48%;transform:translateY(-50%);padding:0 22px}.hero h1{font-size:60px;letter-spacing:-2.5px}.hero .subtitle{font-size:12px;max-width:290px}.hero-dots{left:22px;bottom:20px}.filters{gap:9px;margin:15px 0 30px}.filter{flex:0 0 112px;height:78px;border-radius:14px}.section{margin:30px 0 38px}.section-head h2{font-size:22px}.poster-row{grid-template-columns:repeat(5,156px);gap:12px}.editor-grid{grid-template-columns:1fr;gap:13px}.editor-card{aspect-ratio:1.55}.ott-row{grid-template-columns:repeat(5,145px);gap:12px}.genre-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.genre-tile{min-height:108px;padding:14px}footer{margin:54px -13px 0;padding:28px 16px 26px;border-radius:24px 24px 0 0}footer .foot-links{gap:14px 18px;margin-bottom:20px}.footer-brand .brand-word{font-size:26px;letter-spacing:4px}}
+/* Hero and poster composition based on the supplied reference (footer intentionally untouched) */
+.hero{height:clamp(390px,32vw,520px);margin:0 calc(clamp(16px,3vw,42px)*-1) 0;border-radius:0;box-shadow:none;background:#08090d;isolation:isolate}
+.hero-bg{background-image:linear-gradient(90deg,#07090df5 0%,#07090de0 28%,#07090d85 49%,#07090d10 80%),linear-gradient(0deg,#07090d8a,transparent 30%),url("https://images.filmibeat.com/img/2024/06/kalki-2898-ad-1718261882.jpg");background-position:center,center,center 38%;background-size:cover;filter:saturate(1.12) contrast(1.04);transition:background-image .35s}
+.hero:before{background:linear-gradient(90deg,#07090df2 0%,#07090dcb 28%,#07090d70 50%,transparent 80%),linear-gradient(0deg,#080b16 0%,transparent 28%)}
+.hero-content{top:50%;bottom:auto;transform:translateY(-50%);left:clamp(24px,5vw,78px);padding:0;max-width:520px}
+.hero h1{font-size:clamp(46px,6vw,82px);letter-spacing:1px;line-height:.95;margin:10px 0 18px}
+.hero h1 span{display:block;font-size:.42em;letter-spacing:9px;margin-top:12px;color:#fff}
+.hero .meta{margin:15px 0 12px;font-size:14px;gap:10px}
+.hero-description{max-width:440px;color:#f1f1f3;font-size:15px;line-height:1.45;margin:8px 0 20px;text-shadow:0 2px 12px #000}
+.hero .btn{border-radius:10px;padding:13px 24px;font-size:15px}.hero .btn.primary{background:#e50914;border-color:#ff3944;box-shadow:0 8px 22px #e5091445}.hero .btn:not(.primary){background:#151515b8;border:1px solid #ffffff55}
+.hero-arrow{position:absolute;z-index:5;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;border:1px solid #ffffff40;background:#08090d9c;color:white;font-size:34px;line-height:1;display:grid;place-items:center;cursor:pointer;transition:.2s}
+.hero-arrow:hover{background:#e50914;border-color:#ff5961}.hero-prev{left:22px}.hero-next{right:22px}
+.hero-dots{left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:11px;align-items:center}
+.hero-dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#ffffffa0;cursor:pointer;transition:all .2s}.hero-dots button.active{width:13px;height:13px;background:#e50914;box-shadow:0 0 12px #e5091480}
+#trending{margin-top:16px}#trending .poster-row{grid-template-columns:repeat(7,minmax(0,1fr));gap:12px}
+#trending .poster{aspect-ratio:1.05/1;border-radius:11px}#trending .poster-copy{bottom:10px;left:10px}#trending .poster-copy h3{font-size:clamp(12px,1.25vw,17px)}#trending .poster-copy p,#trending .poster-copy small{display:none}#trending .poster:after{background:linear-gradient(0deg,#08090df0,transparent 55%)}
+@media(max-width:950px){#trending .poster-row{grid-template-columns:repeat(7,150px);overflow-x:auto;padding-bottom:8px}}
+@media(max-width:620px){.hero{height:450px}.hero-content{left:22px;right:22px;top:51%;transform:translateY(-50%)}.hero h1{font-size:52px}.hero h1 span{font-size:.4em;letter-spacing:5px}.hero-description{font-size:13px;max-width:290px}.hero-arrow{width:36px;height:36px;font-size:26px}.hero-prev{left:8px}.hero-next{right:8px}.hero-dots{bottom:15px}#trending .poster-row{grid-template-columns:repeat(7,145px)}}
 </style>
 </head>
 <body>
@@ -197,16 +215,7 @@ footer>div:last-child{position:relative;z-index:1;color:#8f93a3;font-size:11px;l
 <a class="search" href="https://www.justwatch.com/in" aria-label="Search movies">⌕</a>
 </header>
 <main id="home">
-<section class="hero">
-<div class="hero-bg"></div>
-<div class="hero-content">
-<div class="eyebrow">Universe spotlight · Indian cinema</div>
-<h1>IKKIS</h1>
-<div class="subtitle">The untold story of<br>Second Lieutenant Arun Khetarpal</div>
-<div class="meta"><span>Biographical</span><span>War</span><span>Drama</span></div>
-<div class="actions"><a class="btn primary" href="https://www.justwatch.com/in/search?q=Ikkis" target="_blank" rel="noopener noreferrer">▶ &nbsp;Explore Movie &nbsp;→</a><a class="btn" href="https://www.youtube.com/results?search_query=Ikkis+official+trailer" target="_blank" rel="noopener noreferrer">▷ &nbsp;Trailer</a></div>
-</div><div class="hero-dots"><i></i><i></i><i></i><i></i></div>
-</section>
+<section class="hero" id="hero-carousel" aria-label="Featured movies"><div class="hero-bg" id="hero-bg"></div><div class="hero-content" id="hero-content"><div class="eyebrow">UNIVERSE SPOTLIGHT · INDIAN CINEMA</div><h1 id="hero-title">KALKI <span>2898 AD</span></h1><div class="meta" id="hero-meta"><span>Action</span><span>Sci-Fi</span><span>Drama</span><span>2024</span></div><p class="hero-description" id="hero-description">In a dystopian future, the final battle for humanity’s survival begins with the birth of Kalki.</p><div class="actions"><a class="btn primary" id="hero-watch" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer">▶ &nbsp;Watch Now</a><a class="btn" id="hero-list" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer">＋ &nbsp;My List</a></div></div><button class="hero-arrow hero-prev" type="button" aria-label="Previous featured title">‹</button><button class="hero-arrow hero-next" type="button" aria-label="Next featured title">›</button><div class="hero-dots" id="hero-dots"><button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button><button aria-label="Slide 4"></button><button aria-label="Slide 5"></button></div></section>
 <nav class="filters" aria-label="Browse categories">
 <a class="filter" href="#movies"><span class="ico">▣</span>All</a><a class="filter active" href="#trending"><span class="ico trend-icon" aria-hidden="true">↗</span>Trending</a><a class="filter" href="#editor"><span class="ico">☆</span>Top Rated</a><a class="filter" href="#ott"><span class="ico">▦</span>New Releases</a><a class="filter" href="#ott"><span class="ico">▷</span>OTT Releases</a><a class="filter" href="#indian"><span class="ico">🇮🇳</span>Indian</a><a class="filter" href="#international"><span class="ico">◎</span>International</a>
 </nav>
@@ -280,4 +289,13 @@ footer>div:last-child{position:relative;z-index:1;color:#8f93a3;font-size:11px;l
 </main>
 <footer><div class="foot-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a><a href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">JustWatch India ↗</a></div><div class="footer-signature"><div class="footer-made">Made with ♥️</div><div class="footer-wordmark-group"><div class="footer-brand"><span class="brand-word">UNIVERSE<span class="trademark-dot">.</span></span></div><div class="footer-by">by Savan Jee</div></div></div><div style="margin-top:8px">Movie artwork and trademarks belong to their respective rights holders. UNIVERSE is an independent discovery guide.</div></footer>
 </div>
-</body></html>
+<script>(()=>{const slides=[
+{title:'KALKI <span>2898 AD</span>',meta:['Action','Sci-Fi','Drama','2024'],desc:'In a dystopian future, the final battle for humanity’s survival begins with the birth of Kalki.',img:'https://images.filmibeat.com/img/2024/06/kalki-2898-ad-1718261882.jpg',q:'Kalki 2898 AD'},
+{title:'PUSHPA <span>THE RULE</span>',meta:['Action','Crime','Drama','2024'],desc:'A fearless rise, a powerful empire, and a battle for control.',img:'https://images.filmibeat.com/img/2024/12/pushpa-2-the-rule-1733302517.jpg',q:'Pushpa 2 The Rule'},
+{title:'STREE <span>2</span>',meta:['Horror','Comedy','Mystery','2024'],desc:'The town is haunted again—and this time, the legend gets bigger.',img:'https://images.filmibeat.com/img/2024/08/stree-2-1723181232.jpg',q:'Stree 2'},
+{title:'DUNE <span>PART TWO</span>',meta:['Sci-Fi','Adventure','Drama','2024'],desc:'A journey across the sands that will change the fate of an empire.',img:'https://images.filmibeat.com/img/2024/03/dune-part-two-1709549188.jpg',q:'Dune Part Two'},
+{title:'MAHAVATAR <span>NARSIMHA</span>',meta:['Animation','Action','Mythology','2025'],desc:'A mythic tale of faith, courage, and the triumph of good over evil.',img:'https://images.filmibeat.com/img/2025/07/mahavatar-narsimha-1751871258.jpg',q:'Mahavatar Narsimha'}];
+const bg=document.getElementById('hero-bg'),title=document.getElementById('hero-title'),meta=document.getElementById('hero-meta'),desc=document.getElementById('hero-description'),watch=document.getElementById('hero-watch'),list=document.getElementById('hero-list'),dots=[...document.querySelectorAll('#hero-dots button')],hero=document.getElementById('hero-carousel');let i=0,t;
+function show(n){i=(n+slides.length)%slides.length;const s=slides[i];title.innerHTML=s.title;meta.innerHTML=s.meta.map(x=>'<span>'+x+'</span>').join('');desc.textContent=s.desc;watch.href=list.href='https://www.justwatch.com/in/search?q='+encodeURIComponent(s.q);bg.style.backgroundImage='linear-gradient(90deg,#07090df5 0%,#07090de0 28%,#07090d85 49%,#07090d10 80%),linear-gradient(0deg,#07090d8a,transparent 30%),url("'+s.img+'")';dots.forEach((d,j)=>d.classList.toggle('active',j===i))}
+function start(){clearInterval(t);t=setInterval(()=>show(i+1),6500)}
+document.querySelector('.hero-next').addEventListener('click',()=>{show(i+1);start()});document.querySelector('.hero-prev').addEventListener('click',()=>{show(i-1);start()});dots.forEach((d,j)=>d.addEventListener('click',()=>{show(j);start()}));hero.addEventListener('mouseenter',()=>clearInterval(t));hero.addEventListener('mouseleave',start);show(0);start()})();</script></body></html>
