@@ -338,7 +338,7 @@ footer:before{content:"";position:absolute;left:-5vw;right:-5vw;top:-45px;height
    dots.forEach((dot,j)=>{dot.classList.toggle('active',j===index);dot.setAttribute('aria-current',j===index?'true':'false')});
  }
  function stop(){if(timer){clearInterval(timer);timer=null}}
- function start(){stop();if(!paused)timer=setInterval(()=>show(index+1),6500)}
+ function start(){stop();if(!paused)timer=setInterval(()=>show(index+1),4000)}
  function pause(){paused=true;stop()}
  function resume(){paused=false;start()}
  hero.querySelector('.hero-next')?.addEventListener('click',()=>{show(index+1);start()});
