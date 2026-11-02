@@ -2,134 +2,97 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#08090d">
-<meta name="description" content="Universe — discover movies, web series and streaming destinations in one cinematic place.">
-<meta name="robots" content="index,follow,max-image-preview:large">
+<title>UNIVERSE — Movies, Series & OTT Discovery</title>
+<meta name="description" content="Discover movies, series, Indian cinema, and legal streaming destinations with UNIVERSE.">
+<meta name="theme-color" content="#080b16">
 <link rel="canonical" href="https://universe-by-savan.netlify.app/">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Universe">
-<meta property="og:title" content="Universe — Movies, Series & More">
-<meta property="og:description" content="Discover new OTT releases, movie picks and official streaming destinations in India.">
-<meta property="og:url" content="https://universe-by-savan.netlify.app/">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Universe — Movies & Series">
-<title>Universe — Movies, Series & More</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--bg:#08090d;--surface:#17181f;--muted:#a8a9b3;--red:#e50914;--line:#ffffff18}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#fff;font-family:"DM Sans",sans-serif;overflow-x:hidden}
-a{color:inherit;text-decoration:none}.wrap{width:min(1440px,100% - 48px);margin:auto}
-header{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative;z-index:5}
-.logo{font:800 29px "Space Grotesk";letter-spacing:-1.8px;color:#f8f8fb}.logo b{color:#ff3040}
-nav{display:flex;align-items:center;gap:25px;color:#d2d2d7;font-size:14px}nav a:hover{color:#fff}
-.search{border:1px solid #ffffff30;border-radius:999px;padding:10px 16px;background:#ffffff08}
-.hero{min-height:540px;position:relative;display:flex;align-items:center;border-radius:22px;overflow:hidden;background:#171821;margin-bottom:42px}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#08090df5 0%,#08090dcc 37%,#08090d20 76%),linear-gradient(0deg,#08090d 0%,transparent 38%),url("https://images.unsplash.com/photo-1489599849927-2ee91dbd1b1?auto=format&fit=crop&w=1800&q=85") center 35%/cover no-repeat;transform:scale(1.02)}
-.hero-content{position:relative;padding:clamp(28px,6vw,78px);max-width:720px}
-.kicker{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#ffb8be;font-weight:800}.hero h1{font:700 clamp(42px,6.8vw,84px)/.98 "Space Grotesk";letter-spacing:-3.5px;margin:17px 0}.hero p{font-size:17px;line-height:1.65;color:#d0d0d7;max-width:540px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 23px;border-radius:9px;font-weight:800;font-size:15px;transition:transform .2s,filter .2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}.btn-red{background:#e50914;color:white}.btn-light{background:#f4f4f5;color:#111}.btn-dark{background:#ffffff20;color:#fff;border:1px solid #ffffff20}
-.section{margin:42px 0 50px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.section h2{font:700 25px "Space Grotesk";letter-spacing:-.5px;margin:0}.section-head a{font-size:13px;color:#b8b8c2}.row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:15px}
-.poster{min-width:0;position:relative;aspect-ratio:2/3;border-radius:12px;overflow:hidden;background:#20212a;transition:transform .22s,box-shadow .22s;isolation:isolate}
-.poster:hover{transform:scale(1.045);z-index:2;box-shadow:0 14px 40px #000a}.poster img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:-2}.poster:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#05060af5 0%,#05060a55 45%,transparent 80%);z-index:-1}
-.poster-copy{position:absolute;left:13px;right:12px;bottom:14px}.poster-copy small{font-size:10px;letter-spacing:1px;color:#ffb5bd;text-transform:uppercase;font-weight:800}.poster-copy h3{font:700 18px/1.12 "Space Grotesk";margin:6px 0}.poster-copy p{font-size:11px;color:#d2d2d7;margin:0}
-.cover1{background:linear-gradient(150deg,#2c1119,#9d1829 42%,#130a13)}.cover2{background:linear-gradient(145deg,#101c31,#4d6179 48%,#17101d)}.cover3{background:linear-gradient(145deg,#071d1b,#28705c 50%,#090d12)}.cover4{background:linear-gradient(145deg,#24122e,#a04e88 45%,#100d1a)}.cover5{background:linear-gradient(145deg,#251a09,#b8792a 50%,#110c0b)}.cover6{background:linear-gradient(145deg,#091426,#1b4b7c 48%,#08090d)}
-.cover-art{position:absolute;inset:0;display:grid;place-items:center;font:800 56px "Space Grotesk";opacity:.32;text-shadow:0 6px 30px #000}
-.platforms{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.platform{border:1px solid var(--line);background:linear-gradient(135deg,#1b1c24,#111217);padding:22px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:transform .2s,border-color .2s}.platform:hover{transform:translateY(-3px);border-color:#ffffff55}.platform strong{font-size:16px}.platform span{font-size:12px;color:#aaa}.platform .go{font-size:22px;color:#fff}
-.feature{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.feature-main{padding:32px;border-radius:18px;background:linear-gradient(120deg,#211c31,#171820 65%);border:1px solid var(--line)}.feature-main h2{font:700 34px "Space Grotesk";margin:12px 0}.feature-main p{color:#bfc0ca;line-height:1.6;max-width:520px}.feature-side{border-radius:18px;padding:28px;background:linear-gradient(135deg,#38151c,#171820 70%);border:1px solid #ff304022}.feature-side h3{font:700 24px "Space Grotesk";margin:10px 0}.feature-side p{color:#c2c2cb;font-size:14px;line-height:1.6}
-footer{border-top:1px solid var(--line);margin-top:55px;padding:27px 0 34px;text-align:center;color:#888993;font-size:13px}footer strong{color:#e5e5e8;font-weight:600}
-@media(max-width:1000px){.row{grid-template-columns:repeat(4,minmax(0,1fr))}.platforms{grid-template-columns:repeat(2,1fr)}.hero{min-height:480px}}
-@media(max-width:650px){.wrap{width:calc(100% - 28px)}header{height:66px}.logo{font-size:24px}nav{gap:12px;font-size:12px}nav a:nth-child(3){display:none}.search{padding:8px 10px}.hero{min-height:470px;border-radius:14px}.hero:before{background:linear-gradient(90deg,#08090df2,#08090d99 65%,#08090d35),linear-gradient(0deg,#08090d,transparent 55%),url("https://images.unsplash.com/photo-1489599849927-2ee91dbd1b1?auto=format&fit=crop&w=1200&q=80") 60%/cover}.hero-content{padding:25px}.hero h1{letter-spacing:-2px}.hero p{font-size:15px}.btn{padding:13px 16px;font-size:13px}.row{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.poster-copy h3{font-size:17px}.section{margin:32px 0}.section h2{font-size:22px}.platforms{grid-template-columns:1fr 1fr;gap:10px}.platform{padding:15px;align-items:flex-start;flex-direction:column}.platform strong{font-size:14px}.feature{grid-template-columns:1fr}.feature-main,.feature-side{padding:23px}.feature-main h2{font-size:27px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
- 
-/* Cinematic refresh: luminous navy/plum ambience, warm film glow, richer cards */
-:root{--bg:#080b17;--surface:#171a2b;--muted:#b5b6c5;--red:#ff4057;--line:#ffffff20}
-body{background:radial-gradient(ellipse at 12% 16%,#38202d 0,transparent 35%),radial-gradient(ellipse at 88% 36%,#172d4b 0,transparent 38%),radial-gradient(ellipse at 70% 90%,#35162b 0,transparent 32%),#080b17}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(125deg,#070a14 5%,#121525 48%,#090b16 100%)}
-header{position:sticky;top:0;background:#090b16b8;backdrop-filter:blur(22px);border:1px solid #ffffff12;border-radius:0 0 18px 18px;padding:0 22px;margin-bottom:22px}
-.logo{font-size:27px;letter-spacing:2px}.logo:before{content:"✦";color:#ff5268;font-size:18px;margin-right:8px}
-nav a{padding:10px 13px;border-radius:999px;transition:background .2s,color .2s}nav a:hover{background:#ffffff14}
-.hero{min-height:570px;border:1px solid #ffffff1c;box-shadow:0 24px 80px #0008}
-.hero:before{background:linear-gradient(90deg,#080b17f5 0%,#080b17c9 35%,#080b1730 80%),linear-gradient(0deg,#080b17 0%,transparent 42%),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1900&q=90") center 42%/cover no-repeat}
-.hero-content{max-width:760px}.hero .kicker{color:#ffca8a}.hero h1{font-size:clamp(50px,7vw,94px);text-shadow:0 6px 35px #0009}.hero p{font-size:18px}
-.btn-red{background:linear-gradient(110deg,#ff4057,#a43b9d);box-shadow:0 8px 28px #ff40572e;border-radius:999px}.btn-light,.btn-dark{border-radius:999px}
-.section{margin:48px 0 58px}.section-head{margin-bottom:20px}.section h2{font-size:28px}
-.poster{border:1px solid #ffffff20;border-radius:16px;box-shadow:0 10px 30px #0005}.poster:after{background:linear-gradient(0deg,#050711f5 0%,#05071155 47%,transparent 78%)}.poster-copy{left:14px;bottom:16px}.poster-copy h3{font-size:19px}.poster-copy small{color:#ffc0c7}
-.feature-main,.feature-side{box-shadow:0 15px 45px #0003;border-radius:22px}.feature-main{background:linear-gradient(125deg,#302238,#171a2b 65%)}.feature-side{background:linear-gradient(125deg,#4a1b2c,#171a2b 72%)}
-.platform{background:linear-gradient(135deg,#222438dd,#121522dd);border-radius:17px;backdrop-filter:blur(10px)}
-footer{color:#a3a4b3}
-@media(max-width:650px){header{padding:0 8px;background:#090b16e8}.hero{min-height:500px}.hero:before{background:linear-gradient(90deg,#080b17ed,#080b17a0 70%,#080b1740),linear-gradient(0deg,#080b17,transparent 55%),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85") 60%/cover}.section h2{font-size:23px}}
-
+:root{--bg:#080b16;--panel:#151927;--panel2:#202231;--text:#f8f8fb;--muted:#b8bac8;--red:#f04459;--pink:#a84caa;--line:#ffffff18}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 88% 13%,#3b2830 0,transparent 27%),radial-gradient(ellipse at 12% 45%,#162a43 0,transparent 34%),radial-gradient(ellipse at 80% 80%,#3b142b 0,transparent 31%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(120deg,#070a13d9,#111625a6 55%,#080a13d9)}
+a{color:inherit;text-decoration:none}button{font:inherit}.shell{width:min(1440px,100%);margin:auto;padding:0 28px}
+header{height:94px;display:flex;align-items:center;gap:26px;position:relative;z-index:5}
+.brand{min-width:205px;position:relative;display:block;font-weight:900;letter-spacing:5px;font-size:24px;line-height:1}.brand:before{content:"";position:absolute;width:100px;height:28px;border-top:3px solid #e51d3d;border-radius:50%;left:36px;top:-13px;transform:rotate(-8deg)}.brand small{display:block;letter-spacing:.3px;font-size:9px;color:#d6d7df;font-weight:500;margin-top:8px}
+.nav{display:flex;align-items:center;gap:5px;flex:1;justify-content:center;background:#171923b8;border:1px solid #ffffff1a;border-radius:28px;padding:8px;box-shadow:0 10px 35px #0003;backdrop-filter:blur(20px)}
+.nav a{padding:12px 17px;border-radius:22px;color:#d5d6df;font-size:13px;white-space:nowrap}.nav a.active,.nav a:hover{background:linear-gradient(120deg,#49364f,#25293b);color:white;box-shadow:inset 0 0 0 1px #ffffff1a}
+.search{width:58px;height:58px;border:1px solid #ffffff18;background:#191b27;border-radius:20px;display:grid;place-items:center;font-size:25px}
+.hero{height:490px;position:relative;overflow:hidden;border-radius:25px;margin:0 -4px 20px;background:#101521;box-shadow:0 25px 70px #0005}
+.hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,#090d18 0%,#090d18ed 27%,#090d18a0 48%,#090d1830 78%),linear-gradient(0deg,#080b16 0%,transparent 38%),url("https://m.media-amazon.com/images/M/MV5BYWJkZjg2ZTktYmQ3OC00OTJmLTg4ODUtZWUzNWYwYjg0MTA1XkEyXkFqcGc%40._V1_.jpg");background-position:center,center,68% 32%;background-size:cover,cover,cover;filter:saturate(.9)}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% 35%,transparent 10%,#090d1833 68%);pointer-events:none}
+.hero-content{position:relative;z-index:1;padding:58px 48px;max-width:590px}.eyebrow{color:#eacb91;letter-spacing:2.2px;font-size:11px;font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(52px,7vw,90px);line-height:.92;letter-spacing:-3px;margin:18px 0 15px;font-weight:950;text-transform:uppercase;text-shadow:0 6px 28px #0005}.hero h1 span{color:#d7d9e2}.subtitle{font-size:13px;letter-spacing:.6px;text-transform:uppercase;font-weight:700;max-width:350px}.meta{display:flex;gap:12px;flex-wrap:wrap;color:#d0d1d9;margin:20px 0 24px}.meta span+span:before{content:"•";margin-right:12px;color:#e1a2ae}.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 19px;border-radius:999px;border:1px solid #ffffff2b;font-weight:700;font-size:13px;background:#ffffff0b;backdrop-filter:blur(8px)}.btn.primary{background:linear-gradient(115deg,#d92d51,#874eaa);border-color:#f8a3cb66;box-shadow:0 8px 28px #c22c5b3b}.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}.hero-dots{position:absolute;bottom:23px;left:50%;display:flex;gap:8px;z-index:2}.hero-dots i{width:7px;height:7px;border-radius:50%;background:#ffffff50}.hero-dots i:first-child{background:#fff}
+.filters{display:grid;grid-template-columns:repeat(7,minmax(90px,1fr));gap:12px;margin:20px 0 36px}.filter{height:88px;border:1px solid #ffffff16;background:linear-gradient(145deg,#20212cdd,#141722e8);border-radius:17px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#d6d7df;font-size:12px;box-shadow:0 8px 22px #0002;transition:.2s}.filter .ico{font-size:22px}.filter.active,.filter:hover{background:linear-gradient(145deg,#492334,#242338);border-color:#ff6b8a55;color:#fff;transform:translateY(-2px)}
+.section{margin:34px 0 46px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:5px}.section-head h2{font-size:27px;letter-spacing:-.5px;margin:0;font-weight:850}.section-head .view{font-size:12px;color:#eee;white-space:nowrap}.section-head .view:hover{color:#ff8ca5}.desc{color:var(--muted);margin:3px 0 18px;font-size:14px}
+.poster-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}.poster{position:relative;overflow:hidden;aspect-ratio:2/3;border-radius:17px;border:1px solid #ffffff24;background:#141722;box-shadow:0 12px 28px #0005;transition:transform .25s,box-shadow .25s}.poster:hover{transform:translateY(-7px) scale(1.015);box-shadow:0 22px 40px #0007}.poster img{width:100%;height:100%;object-fit:cover;display:block}.poster:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#070912f5 0%,#0709121c 45%,transparent 70%)}.rating{position:absolute;z-index:1;top:10px;left:10px;background:#090b13d9;border:1px solid #ffffff24;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:800}.poster-copy{position:absolute;z-index:1;bottom:13px;left:13px;right:10px}.poster-copy small{color:#e6c4ce;font-size:11px}.poster-copy h3{margin:4px 0 0;font-size:19px;line-height:1.12}.poster-copy p{margin:4px 0 0;color:#c9cbd4;font-size:11px}
+.editor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.editor-card{height:210px;position:relative;overflow:hidden;border:1px solid #ffffff20;border-radius:18px;background:#151823;box-shadow:0 12px 25px #0003}.editor-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.editor-card:hover img{transform:scale(1.05)}.editor-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080b16f5 0%,#080b1680 45%,transparent 100%)}.editor-text{position:absolute;bottom:15px;left:16px;right:58px;z-index:1}.editor-text h3{margin:0;font-size:19px}.editor-text p{margin:3px 0 0;color:#d0d1d9;font-size:12px}.play{position:absolute;right:16px;bottom:19px;z-index:2;width:38px;height:38px;border:1px solid #f78aa7;border-radius:50%;display:grid;place-items:center;background:#120f1caa}
+.ott-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px}.ott-card{position:relative;aspect-ratio:3/4;border:1px solid #ffffff1d;border-radius:16px;overflow:hidden;background:#151722}.ott-card img{width:100%;height:100%;object-fit:cover}.ott-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080a12f2,transparent 75%)}.platform{position:absolute;top:9px;left:9px;z-index:1;background:#090b12d9;border:1px solid #ffffff25;border-radius:8px;padding:5px 7px;font-size:10px;font-weight:800}.ott-copy{position:absolute;bottom:13px;left:12px;right:8px;z-index:1}.ott-copy h3{font-size:16px;margin:0}.ott-copy p{font-size:11px;color:#bfc1ca;margin:3px 0 0}
+.guide{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}.guide article{padding:25px;border:1px solid #ffffff1b;border-radius:19px;background:linear-gradient(135deg,#302238,#171b2b);}.guide article:nth-child(2){background:linear-gradient(135deg,#421d2c,#171b2b)}.guide h3{font-size:23px;margin:8px 0}.guide p{color:#d0d1d9}
+footer{margin-top:60px;padding:30px 0 35px;border-top:1px solid #ffffff1a;color:#9ea1b0;font-size:12px}footer .foot-links{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:12px}footer a:hover{color:white}
+@media(max-width:950px){.shell{padding:0 18px}header{gap:12px}.brand{min-width:150px;font-size:20px}.nav a{padding:10px 12px}.poster-row,.ott-row{grid-template-columns:repeat(5,minmax(125px,1fr));overflow-x:auto;padding-bottom:8px}.filters{grid-template-columns:repeat(4,1fr)}.hero{height:430px}.hero-content{padding:48px 30px}}
+@media(max-width:620px){.shell{padding:0 13px}header{height:76px;gap:8px}.brand{min-width:116px;font-size:17px;letter-spacing:3px}.brand:before{width:68px;left:22px;top:-9px}.brand small{font-size:7px}.nav{justify-content:flex-start;overflow:auto;padding:5px;border-radius:20px}.nav a{font-size:11px;padding:9px 11px}.nav a:nth-child(n+4){display:none}.search{width:42px;height:42px;border-radius:14px;font-size:19px}.hero{height:470px;border-radius:19px;margin:0}.hero-bg{background-image:linear-gradient(90deg,#090d18f5,#090d18bd 55%,#090d1840),linear-gradient(0deg,#080b16 0%,transparent 45%),url("https://m.media-amazon.com/images/M/MV5BYWJkZjg2ZTktYmQ3OC00OTJmLTg4ODUtZWUzNWYwYjg0MTA1XkEyXkFqcGc%40._V1_.jpg");background-position:center,center,64% center}.hero-content{padding:48px 22px;max-width:100%}.hero h1{font-size:58px}.hero .subtitle{font-size:11px}.filters{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:14px 0 28px}.filter{height:72px;font-size:10px;border-radius:13px}.filter .ico{font-size:19px}.section{margin:28px 0 35px}.section-head h2{font-size:21px}.desc{font-size:12px}.poster-row,.ott-row{grid-template-columns:repeat(5,145px);gap:12px}.poster-copy h3{font-size:16px}.editor-grid{grid-template-columns:1fr;gap:12px}.editor-card{height:190px}.guide{grid-template-columns:1fr}.guide article{padding:20px}.hero-dots{left:47%}}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="shell">
 <header>
-<a class="logo" href="#top" aria-label="Universe home">UNIVERSE<b>.</b></a>
-<nav aria-label="Main navigation"><a href="#top">Home</a><a href="#movies">Movies</a><a href="#series">Series</a><a href="#platforms">Platforms</a><a class="search" href="#discover">Explore ↗</a></nav>
+<a class="brand" href="index.html">UNIVERSE<small>Movies · Series · OTT · Discover</small></a>
+<nav class="nav" aria-label="Main navigation"><a class="active" href="#home">⌂ &nbsp;Home</a><a href="#movies">▣ &nbsp;Movies</a><a href="#series">▣ &nbsp;Series</a><a href="#ott">▱ &nbsp;OTT</a><a href="#more">More⌄</a></nav>
+<a class="search" href="https://www.justwatch.com/in" aria-label="Search movies">⌕</a>
 </header>
-<main id="top">
+<main id="home">
 <section class="hero">
+<div class="hero-bg"></div>
 <div class="hero-content">
-<div class="kicker">NOW SHOWING · UNIVERSE SPOTLIGHT</div>
-<h1>Stories that<br>stay with you.</h1>
-<p>From big-screen spectacles to the next binge-worthy series—discover what’s worth watching, then find official destinations in India.</p>
-<div class="actions"><a class="btn btn-red" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">✦ Discover what to watch ↗</a><a class="btn btn-light" href="#trending">Explore trending ↓</a></div>
-</div></section>
+<div class="eyebrow">Universe spotlight · Indian cinema</div>
+<h1>IKKIS</h1>
+<div class="subtitle">The untold story of<br>Second Lieutenant Arun Khetarpal</div>
+<div class="meta"><span>Biographical</span><span>War</span><span>Drama</span></div>
+<div class="actions"><a class="btn primary" href="https://www.justwatch.com/in/search?q=Ikkis" target="_blank" rel="noopener noreferrer">▶ &nbsp;Explore Movie &nbsp;→</a><a class="btn" href="https://www.youtube.com/results?search_query=Ikkis+official+trailer" target="_blank" rel="noopener noreferrer">▷ &nbsp;Trailer</a></div>
+</div><div class="hero-dots"><i></i><i></i><i></i><i></i></div>
+</section>
+<nav class="filters" aria-label="Browse categories">
+<a class="filter" href="#movies"><span class="ico">▣</span>All</a><a class="filter active" href="#trending"><span class="ico">🔥</span>Trending</a><a class="filter" href="#editor"><span class="ico">☆</span>Top Rated</a><a class="filter" href="#ott"><span class="ico">▦</span>New Releases</a><a class="filter" href="#ott"><span class="ico">▷</span>OTT Releases</a><a class="filter" href="#indian"><span class="ico">🇮🇳</span>Indian</a><a class="filter" href="#international"><span class="ico">◎</span>International</a>
+</nav>
 <section class="section" id="trending">
-<div class="section-head"><h2>🔥 Trending & upcoming in India</h2><a href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">Find streaming options ↗</a></div>
-<p style="color:#b7b8c5;line-height:1.6;margin:-4px 0 18px">A cinematic watchlist of recent and upcoming titles to keep an eye on. Release schedules and streaming availability can change; check official sources before planning your watch.</p>
-<div class="row">
-<a class="poster cover1" href="https://www.justwatch.com/in/search?q=Ramayana%20Part%201" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=85" alt="Epic landscape artwork"><div class="poster-copy"><small>Upcoming · Mythology</small><h3>Ramayana: Part 1</h3><p>Epic · Indian cinema</p></div></a>
-<a class="poster cover2" href="https://www.justwatch.com/in/search?q=Nakhrewaalii" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=85" alt="Ocean cinematic artwork"><div class="poster-copy"><small>Recent · Hindi</small><h3>Nakhrewaalii</h3><p>Romance · Drama</p></div></a>
-<a class="poster cover3" href="https://www.justwatch.com/in/search?q=Pyre%202026" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=700&q=85" alt="Sunset landscape artwork"><div class="poster-copy"><small>Recent · Drama</small><h3>Pyre</h3><p>Drama · Romance</p></div></a>
-<a class="poster cover4" href="https://www.justwatch.com/in/search?q=Daayra" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=700&q=85" alt="Night sky cinematic artwork"><div class="poster-copy"><small>Coming soon · Thriller</small><h3>Daayra</h3><p>Crime · Mystery</p></div></a>
-<a class="poster cover5" href="https://www.justwatch.com/in/search?q=Gunmaaster%20G9" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=700&q=85" alt="Dark cinematic artwork"><div class="poster-copy"><small>Upcoming · Action</small><h3>Gunmaaster G9</h3><p>Action · Thriller</p></div></a>
-<a class="poster cover6" href="https://www.justwatch.com/in/search?q=Yeh%20Prem%20Mol%20Liya" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=700&q=85" alt="Mountain cinematic artwork"><div class="poster-copy"><small>Upcoming · Hindi</small><h3>Yeh Prem Mol Liya</h3><p>Family · Romance</p></div></a>
-</div></section>
-<section class="section" id="series">
-<div class="section-head"><h2>📺 Series worth exploring</h2><a href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">Browse streaming options →</a></div>
-<p style="color:#aaa;line-height:1.6;margin:-4px 0 18px">Indian and international series to add to your watchlist. Seasons and availability vary by region and service.</p>
-<div class="row">
-<a class="poster cover6" href="https://www.justwatch.com/in/search?q=Panchayat" target="_blank" rel="noopener noreferrer"><div class="cover-art">P</div><div class="poster-copy"><small>Hindi · Comedy drama</small><h3>Panchayat</h3><p>Small-town life · Warm comedy</p></div></a>
-<a class="poster cover4" href="https://www.justwatch.com/in/search?q=The%20Family%20Man" target="_blank" rel="noopener noreferrer"><div class="cover-art">F</div><div class="poster-copy"><small>Hindi · Spy thriller</small><h3>The Family Man</h3><p>Espionage · Family</p></div></a>
-<a class="poster cover2" href="https://www.justwatch.com/in/search?q=Scam%201992" target="_blank" rel="noopener noreferrer"><div class="cover-art">92</div><div class="poster-copy"><small>Hindi · Drama</small><h3>Scam 1992</h3><p>Finance · Drama</p></div></a>
-<a class="poster cover1" href="https://www.justwatch.com/in/search?q=Delhi%20Crime" target="_blank" rel="noopener noreferrer"><div class="cover-art">D</div><div class="poster-copy"><small>Hindi · Crime drama</small><h3>Delhi Crime</h3><p>Investigation · Drama</p></div></a>
-<a class="poster cover3" href="https://www.justwatch.com/in/search?q=Rocket%20Boys" target="_blank" rel="noopener noreferrer"><div class="cover-art">R</div><div class="poster-copy"><small>Hindi · Historical drama</small><h3>Rocket Boys</h3><p>Science · History</p></div></a>
-<a class="poster cover5" href="https://www.justwatch.com/in/search?q=The%20Rings%20of%20Power" target="_blank" rel="noopener noreferrer"><div class="cover-art">R</div><div class="poster-copy"><small>Fantasy · Adventure</small><h3>The Rings of Power</h3><p>Epic fantasy</p></div></a>
-</div></section>
-<section class="section" id="editorial">
-<div class="section-head"><h2>✨ Universe recommendations</h2><span style="color:#aaa;font-size:13px">Original watch ideas</span></div>
-<div class="feature">
-<div class="feature-main"><div class="kicker">If you want something inspiring</div><h2>A story about persistence.</h2><p><strong>12th Fail</strong> is an uplifting drama for viewers who enjoy stories about ambition, setbacks and second chances. It’s a grounded pick for a focused movie night.</p><p style="font-size:13px;color:#9c9ca7">Universe pick · Motivational drama</p><div class="actions"><a class="btn btn-red" href="https://www.justwatch.com/in/search?q=12th%20Fail" target="_blank" rel="noopener noreferrer">Find 12th Fail ↗</a></div></div>
-<div class="feature-side"><div class="kicker">For a group movie night</div><h3>Try a survival thriller.</h3><p><strong>Manjummel Boys</strong> builds tension around friendship and a desperate rescue. A strong choice for viewers who enjoy suspense and teamwork.</p><a class="btn btn-dark" href="https://www.justwatch.com/in/search?q=Manjummel%20Boys" target="_blank" rel="noopener noreferrer">Find Manjummel Boys →</a></div>
-</div></section>
-<section class="section" id="discover">
-<div class="feature">
-<div class="feature-main"><div class="kicker">One tap. Your next destination.</div><h2>Find something to watch.</h2><p>Jump straight to your favourite streaming service and discover what’s available in your region. Universe is a discovery hub — playback and availability are handled by the official platforms.</p><div class="actions"><a class="btn btn-red" href="#platforms">Choose a platform ↗</a></div></div>
-<div class="feature-side"><div class="kicker">Your entertainment hub</div><h3>Movies. Series. Endless stories.</h3><p>Fresh picks, big visuals and quick links — designed to make exploring effortless.</p><a class="btn btn-dark" href="#movies">Browse titles →</a></div>
+<div class="section-head"><h2>📈 Trending Now</h2><a class="view" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">View All →</a></div>
+<p class="desc">A cinematic watchlist of popular titles to explore. Availability varies by service and region.</p>
+<div class="poster-row">
+<a class="poster" href="https://www.justwatch.com/in/search?q=Thamma" target="_blank" rel="noopener noreferrer"><img src="https://smart-cms-bkd-static-media.jnm.digital/jagran-hindi/images/2025/10/23/template/image/maddockfilms_1760251585_3741583945487276328_4436680603-1761193494509.jpg" alt="Thamma movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Thamma</h3><p>Horror · Comedy</p></span></a>
+<a class="poster" href="https://www.justwatch.com/in/search?q=Ikkis" target="_blank" rel="noopener noreferrer"><img src="https://m.media-amazon.com/images/M/MV5BYWJkZjg2ZTktYmQ3OC00OTJmLTg4ODUtZWUzNWYwYjg0MTA1XkEyXkFqcGc%40._V1_.jpg" alt="Ikkis movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Ikkis</h3><p>War · Biography</p></span></a>
+<a class="poster" href="https://www.justwatch.com/in/search?q=Kantara%20Chapter%201" target="_blank" rel="noopener noreferrer"><img src="https://m.media-amazon.com/images/M/MV5BMjZjY2EyNzUtYWFiZS00YTdkLWI5M2MtZDI5N2MwZjFmZTY4XkEyXkFqcGc%40._V1_.jpg" alt="Kantara Chapter 1 poster" loading="lazy"><span class="poster-copy"><small>Kannada · Hindi</small><h3>Kantara: Chapter 1</h3><p>Mythology · Action</p></span></a>
+<a class="poster" href="https://www.justwatch.com/in/search?q=Baaghi%204" target="_blank" rel="noopener noreferrer"><img src="https://img.republicworld.com/all_images/GzfzmqubkAMT57u-1756813479428.webp" alt="Baaghi 4 movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Baaghi 4</h3><p>Action · Thriller</p></span></a>
+<a class="poster" href="https://www.justwatch.com/in/search?q=The%20Conjuring%20Last%20Rites" target="_blank" rel="noopener noreferrer"><img src="https://d3lmgsai2rsy7d.cloudfront.net/xuan/media/article/2025/May/theconjuring4-poster.jpg" alt="The Conjuring Last Rites poster" loading="lazy"><span class="poster-copy"><small>English · Hindi</small><h3>The Conjuring: Last Rites</h3><p>Horror · Mystery</p></span></a>
 </div>
 </section>
-
-<section class="section" id="watch-guide">
-<div class="feature">
-<div class="feature-main"><div class="kicker">Universe watch guide</div><h2>What should you watch tonight?</h2><p>Start with your mood: choose a tense crime thriller, a comfort comedy, a family-friendly adventure or a slow-burn drama. Check the title on its official streaming service before subscribing or renting — availability and language options can change by region.</p><div class="actions"><a class="btn btn-red" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">Check streaming availability ↗</a></div></div>
-<div class="feature-side"><div class="kicker">Quick tip</div><h3>Check before you pay</h3><p>Use a streaming search to confirm whether a title is included with your subscription, available to rent, or currently unavailable in India.</p></div>
+<section class="section" id="editor">
+<div class="section-head"><h2>⭐ Editor’s Picks</h2><a class="view" href="#movies">View All →</a></div>
+<p class="desc">Handpicked films with memorable stories and characters.</p>
+<div class="editor-grid">
+<a class="editor-card" href="https://www.justwatch.com/in/search?q=12th%20Fail" target="_blank" rel="noopener noreferrer"><img src="https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2024/12/vs1ITG-1734602003634.jpg?size=%2A%3A900" alt="12th Fail poster" loading="lazy"><span class="editor-text"><h3>12th Fail</h3><p>A powerful real story of determination and resilience.</p></span><span class="play">▶</span></a>
+<a class="editor-card" href="https://www.justwatch.com/in/search?q=Laapataa%20Ladies" target="_blank" rel="noopener noreferrer"><img src="https://mxp-media.ilnmedia.com/media/content/2024/May/social-manjummel-boys-laapataa-ladies-best-Indian-films-2024_6639d59b6f656.jpeg" alt="Laapataa Ladies poster collage" loading="lazy"><span class="editor-text"><h3>Laapataa Ladies</h3><p>A heartfelt tale of identity, freedom and self-discovery.</p></span><span class="play">▶</span></a>
+<a class="editor-card" href="https://www.justwatch.com/in/search?q=Manjummel%20Boys" target="_blank" rel="noopener noreferrer"><img src="https://media.dinamani.com/dinamani/2024-02/51e31203-9898-4760-8a86-f09a865b56bf/manju.jpg" alt="Manjummel Boys poster" loading="lazy"><span class="editor-text"><h3>Manjummel Boys</h3><p>A gripping survival story about friendship that stays with you.</p></span><span class="play">▶</span></a>
 </div>
 </section>
-\n<section class="section" id="platforms">
-<div class="section-head"><h2>🎬 Go straight to streaming</h2><span style="color:#aaa;font-size:13px">Official destinations</span></div>
-<div class="platforms">
-<a class="platform" href="https://www.netflix.com/in/" target="_blank" rel="noopener noreferrer"><div><strong>Netflix</strong><br><span>Movies &amp; series</span></div><span class="go">↗</span></a>
-<a class="platform" href="https://www.hotstar.com/in" target="_blank" rel="noopener noreferrer"><div><strong>JioHotstar</strong><br><span>Indian &amp; international</span></div><span class="go">↗</span></a>
-<a class="platform" href="https://www.primevideo.com/" target="_blank" rel="noopener noreferrer"><div><strong>Prime Video</strong><br><span>Films &amp; originals</span></div><span class="go">↗</span></a>
-<a class="platform" href="https://www.sonyliv.com/" target="_blank" rel="noopener noreferrer"><div><strong>SonyLIV</strong><br><span>Shows &amp; movies</span></div><span class="go">↗</span></a>
-<a class="platform" href="https://www.zee5.com/" target="_blank" rel="noopener noreferrer"><div><strong>ZEE5</strong><br><span>Indian entertainment</span></div><span class="go">↗</span></a>
-<a class="platform" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><div><strong>YouTube</strong><br><span>Trailers &amp; videos</span></div><span class="go">↗</span></a>
-<a class="platform" href="https://www.netflix.com/in/" target="_blank" rel="noopener noreferrer"><div><strong>Latest on Netflix</strong><br><span>Open Netflix India</span></div><span class="go">↗</span></a>
-<a class="platform" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer"><div><strong>JustWatch India</strong><br><span>Search where to stream</span></div><span class="go">↗</span></a>
+<section class="section" id="ott">
+<div class="section-head"><h2>🎞 What’s New on OTT</h2><a class="view" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">View All →</a></div>
+<p class="desc">Explore films and series across major streaming platforms. Check each service for current availability.</p>
+<div class="ott-row">
+<a class="ott-card" href="https://www.justwatch.com/in/search?q=Amaran" target="_blank" rel="noopener noreferrer"><img src="https://timelinedaily.com/assets/2024/11/luck-doesnt-knock-twice-unless-youre-baskhar-watch-lucky-baskhar-on-netflix-amal-neerad-movie-bougainvillea-majormukundvaradarajan-jigra.jpg" alt="Amaran and OTT poster artwork" loading="lazy"><span class="platform">Netflix</span><span class="ott-copy"><h3>Amaran</h3><p>Netflix · Tamil</p></span></a>
+<a class="ott-card" href="https://www.justwatch.com/in/search?q=Jigra" target="_blank" rel="noopener noreferrer"><img src="https://timelinedaily.com/assets/2024/11/luck-doesnt-knock-twice-unless-youre-baskhar-watch-lucky-baskhar-on-netflix-amal-neerad-movie-bougainvillea-majormukundvaradarajan-jigra.jpg" alt="Jigra poster artwork" loading="lazy"><span class="platform">Prime Video</span><span class="ott-copy"><h3>Jigra</h3><p>Prime Video · Hindi</p></span></a>
+<a class="ott-card" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer"><img src="https://images.filmibeat.com/600x400/ph-big/img_og/lucky-baskhar-to-kalki-2898-ad-highest-grossing-telugu-movies-of-20241732872458.jpg" alt="Kalki 2898 AD poster artwork" loading="lazy"><span class="platform">Netflix</span><span class="ott-copy"><h3>Kalki 2898 AD</h3><p>OTT · Telugu</p></span></a>
+<a class="ott-card" href="https://www.justwatch.com/in/search?q=HIT%3A%20The%203rd%20Case" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=700&q=85" alt="Crime thriller artwork" loading="lazy"><span class="platform">JioHotstar</span><span class="ott-copy"><h3>HIT: The 3rd Case</h3><p>Crime · Telugu</p></span></a>
+<a class="ott-card" href="https://www.justwatch.com/in/search?q=Lucky%20Baskhar" target="_blank" rel="noopener noreferrer"><img src="https://images.filmibeat.com/600x400/ph-big/img_og/lucky-baskhar-to-kalki-2898-ad-highest-grossing-telugu-movies-of-20241732872458.jpg" alt="Lucky Baskhar movie artwork" loading="lazy"><span class="platform">SonyLIV</span><span class="ott-copy"><h3>Lucky Baskhar</h3><p>Drama · Telugu</p></span></a>
 </div>
+</section>
+<section class="section" id="movies">
+<div class="section-head"><h2>🎬 Explore Movies</h2><a class="view" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">Browse all →</a></div>
+<p class="desc">Browse by mood, language or genre—and continue to a licensed streaming service.</p>
+<div class="guide"><article><div class="eyebrow">Movie night, sorted</div><h3>Find your next favourite film.</h3><p>Choose a title, check where it’s available in India, and watch directly through the official service.</p><a class="btn primary" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">Search legal streaming ↗</a></article><article id="series"><div class="eyebrow">Series & seasons</div><h3>One more episode?</h3><p>Explore Indian dramas, international series, crime, comedy and more.</p><a class="btn" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">Explore series ↗</a></article></div>
+</section>
+<section class="section" id="more">
+<div class="section-head"><h2>🌌 More from UNIVERSE</h2></div>
+<p class="desc">An independent movie and series discovery guide. We do not host or stream films or episodes. Availability, subscriptions and playback are handled by official services.</p>
 </section>
 </main>
-<footer>Universe is an independent movie and series discovery guide. We do not host or stream video. Availability, pricing and playback are controlled by the linked services. Please verify details on the official platform.<br><br><a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a> · <a href="contact.html">Contact</a><br><br><strong>Universe by Savan Jee</strong></footer>
+<footer><div class="foot-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a><a href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">JustWatch India ↗</a></div><div>Universe by Savan Jee</div><div style="margin-top:8px">Movie artwork and trademarks belong to their respective rights holders. UNIVERSE is an independent discovery guide.</div></footer>
 </div>
-</body>
-</html>
+</body></html>
