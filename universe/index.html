@@ -43,6 +43,36 @@ footer{margin-top:60px;padding:30px 0 35px;border-top:1px solid #ffffff1a;color:
 @media(max-width:950px){.hero-content{bottom:52px;padding:0 30px}}
 @media(max-width:620px){.hero-content{bottom:48px;padding:0 22px}.hero h1{margin:12px 0 10px}.meta{margin:13px 0 16px;gap:9px}.hero .subtitle{line-height:1.4}.hero-dots{bottom:18px}.btn{padding:11px 15px;font-size:12px}}
 
+
+/* Netflix-inspired signature red button palette */
+.btn.primary{
+ background:linear-gradient(135deg,#e50914 0%,#b20710 100%);
+ border:1px solid #ff5961a6;
+ color:#fff;
+ box-shadow:0 8px 28px #e5091445,inset 0 1px #ffffff30;
+}
+.btn.primary:hover{
+ background:linear-gradient(135deg,#f6121d 0%,#c40812 100%);
+ box-shadow:0 12px 34px #e5091466,inset 0 1px #ffffff45;
+}
+.btn:not(.primary){
+ background:linear-gradient(135deg,#252020e8,#171418f2);
+ border:1px solid #e5091466;
+ color:#fff;
+ box-shadow:inset 0 1px #ffffff12;
+}
+.btn:not(.primary):hover{
+ background:linear-gradient(135deg,#3a171b,#211417);
+ border-color:#f6121d;
+ box-shadow:0 8px 22px #e509142b;
+}
+.filter.active{
+ background:linear-gradient(145deg,#54171d,#25151b);
+ border-color:#e5091480;
+ box-shadow:0 8px 24px #e509142b,inset 0 1px #ffffff18;
+}
+.filter.active .ico{color:#ff5a62;text-shadow:0 0 15px #e5091466}
+
 </style>
 </head>
 <body>
