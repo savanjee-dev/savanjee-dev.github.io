@@ -112,12 +112,41 @@ footer{padding-top:35px;padding-bottom:45px}
 @media(max-width:620px){.brand-word,.footer-brand{font-size:17px;letter-spacing:3px}.brand-word .trademark-dot,.footer-brand .trademark-dot{margin-left:-2px}}
 
 
-/* Sticky navigation header and larger trademark wordmark */
-header{position:sticky;top:0;z-index:100;height:104px;padding:0 12px;margin:0 -12px;background:linear-gradient(180deg,#080b16f5 0%,#080b16df 78%,#080b1600 100%);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-.brand-word{font-size:34px;letter-spacing:4px}
-.brand{min-width:235px}
-@media(max-width:950px){header{height:88px}.brand{min-width:165px}.brand-word{font-size:28px}}
-@media(max-width:620px){header{height:76px;padding:0 5px;margin:0 -5px}.brand{min-width:116px}.brand-word{font-size:19px;letter-spacing:2px}}
+/* Full-width, two-tier sticky masthead: trademark stays visible above navigation */
+header{
+ position:sticky;top:0;z-index:100;
+ height:auto;min-height:0;padding:14px 12px 12px;margin:0 -12px;
+ display:flex;flex-direction:column;align-items:stretch;gap:12px;
+ background:linear-gradient(180deg,#080b16fc 0%,#080b16f2 88%,#080b16e8 100%);
+ border-bottom:1px solid #ffffff18;
+ backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)
+}
+.brand{
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ width:100%;min-width:0;text-align:center;padding:2px 0 5px;
+}
+.brand-word{font-size:clamp(38px,5.4vw,58px);letter-spacing:8px;line-height:1.05}
+.brand small{font-size:11px;letter-spacing:2px;margin-top:7px}
+.brand:before{width:150px;height:34px;left:calc(50% - 75px);top:-9px}
+header .nav{width:100%;flex:none;justify-content:center;min-width:0}
+header .search{position:absolute;right:12px;top:18px;width:48px;height:48px}
+@media(max-width:950px){
+ header{padding:12px 10px 10px;gap:10px}
+ .brand-word{font-size:clamp(32px,6vw,46px);letter-spacing:6px}
+ .brand small{font-size:9px;letter-spacing:1.5px}
+ header .search{right:10px;top:14px;width:43px;height:43px}
+}
+@media(max-width:620px){
+ header{padding:10px 5px 9px;margin:0 -5px;gap:8px}
+ .brand{padding:3px 44px 4px}
+ .brand-word{font-size:clamp(29px,8vw,38px);letter-spacing:4px}
+ .brand small{font-size:8px;letter-spacing:1px;margin-top:5px}
+ .brand:before{width:92px;left:calc(50% - 46px);top:-6px;height:24px}
+ header .nav{justify-content:flex-start;overflow-x:auto;scrollbar-width:none}
+ header .nav::-webkit-scrollbar{display:none}
+ header .nav a{display:block!important;flex:0 0 auto;padding:9px 12px;font-size:11px}
+ header .search{right:5px;top:11px;width:36px;height:36px;font-size:18px}
+}
 
 </style>
 </head>
