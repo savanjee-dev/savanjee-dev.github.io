@@ -225,6 +225,89 @@ footer{position:relative;border-top:0!important;margin-top:48px!important;paddin
 footer:before{content:"";position:absolute;left:-5vw;right:-5vw;top:-45px;height:100px;pointer-events:none;background:radial-gradient(ellipse at 50% 100%,#22283a70,transparent 72%);filter:blur(15px)}
 @media(max-width:620px){header{background:linear-gradient(180deg,#080b16f5 0%,#080b16d8 65%,#080b1600 100%)!important}.hero{border-radius:0 0 18px 18px}.hero-dots{bottom:17px}}
 .hero-bg{position:absolute;inset:0;overflow:hidden;background:#080b16!important}.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 35%;filter:saturate(1.12) contrast(1.04);z-index:0}.hero-bg:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,#07090df5 0%,#07090de0 28%,#07090d85 49%,#07090d10 80%),linear-gradient(0deg,#080b16 0%,transparent 34%)}
+
+/* FINAL footer alignment fix: signature byline ends exactly at the wordmark's right edge */
+footer .footer-signature{
+  display:grid!important;
+  grid-template-columns:1fr auto 1fr!important;
+  grid-template-rows:auto auto auto!important;
+  align-items:center;
+  gap:0!important;
+  width:100%;
+  min-height:0!important;
+  margin-top:22px!important;
+}
+footer .footer-made{
+  grid-column:1 / -1!important;
+  grid-row:1!important;
+  justify-self:start!important;
+  margin:0 0 12px!important;
+  font-size:13px!important;
+  letter-spacing:.3px!important;
+}
+footer .footer-wordmark-group{
+  grid-column:2!important;
+  grid-row:2 / span 2!important;
+  justify-self:center!important;
+  align-self:start!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  width:max-content!important;
+  max-width:100%;
+  padding:0!important;
+  gap:0!important;
+}
+footer .footer-brand{
+  justify-self:auto!important;
+  text-align:left!important;
+  width:max-content;
+  margin:0!important;
+  padding:0!important;
+  font-size:inherit!important;
+  line-height:1.05!important;
+  letter-spacing:0!important;
+}
+footer .footer-brand .brand-word{
+  display:inline-block;
+  font-size:clamp(38px,5.4vw,58px)!important;
+  font-weight:950!important;
+  letter-spacing:8px!important;
+  line-height:1.05!important;
+  white-space:nowrap;
+  color:#fff;
+  text-shadow:0 0 26px #e5091420;
+}
+footer .footer-brand .trademark-dot{
+  color:#e50914!important;
+  font-size:1em!important;
+  margin-left:-3px!important;
+  letter-spacing:0!important;
+}
+footer .footer-wordmark-group .footer-by{
+  display:block!important;
+  align-self:flex-end!important;
+  width:max-content!important;
+  max-width:100%;
+  white-space:nowrap!important;
+  text-align:right!important;
+  margin:4px 0 0!important;
+  padding:0!important;
+  transform:none!important;
+  font-size:12px!important;
+  letter-spacing:1.3px!important;
+  color:#d0cbd8!important;
+}
+@media(max-width:950px){
+ footer .footer-brand .brand-word{font-size:clamp(32px,6vw,46px)!important;letter-spacing:6px!important}
+}
+@media(max-width:620px){
+ footer .footer-signature{margin-top:18px!important}
+ footer .footer-brand .brand-word{font-size:clamp(29px,8vw,38px)!important;letter-spacing:4px!important}
+ footer .footer-brand .trademark-dot{margin-left:-2px!important}
+ footer .footer-by{font-size:11px!important;letter-spacing:.8px!important}
+}
+
 </style>
 </head>
 <body>
