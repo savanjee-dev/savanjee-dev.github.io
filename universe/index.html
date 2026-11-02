@@ -73,6 +73,35 @@ footer{margin-top:60px;padding:30px 0 35px;border-top:1px solid #ffffff1a;color:
 }
 .filter.active .ico{color:#ff5a62;text-shadow:0 0 15px #e5091466}
 
+
+/* Universe extended discovery + stronger cinematic controls */
+.hero-bg{filter:saturate(1.08) brightness(1.12)}
+.hero:before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,#070a14f8 0%,#070a14df 28%,#070a1490 52%,#070a1430 78%),linear-gradient(0deg,#080b16 0%,transparent 50%);pointer-events:none}
+.hero-content{z-index:2;text-shadow:0 2px 18px #000b}
+.hero h1,.hero .subtitle,.hero .meta,.hero .eyebrow{ text-shadow:0 3px 20px #000e}
+.filter{font-weight:750;border:1px solid #ffffff26;box-shadow:0 10px 26px #0005,inset 0 1px #ffffff12;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease,background .24s ease;animation:tileIn .55s both}
+.filter:nth-child(2){animation-delay:.04s}.filter:nth-child(3){animation-delay:.08s}.filter:nth-child(4){animation-delay:.12s}.filter:nth-child(5){animation-delay:.16s}.filter:nth-child(6){animation-delay:.2s}.filter:nth-child(7){animation-delay:.24s}
+.filter:hover,.filter.active{transform:translateY(-5px) scale(1.025);border-color:#ff536b99;box-shadow:0 14px 30px #e5091438,inset 0 1px #ffffff25}
+.filter .ico{font-weight:900;filter:drop-shadow(0 2px 8px #0007)}
+@keyframes tileIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.genre-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.genre-tile{position:relative;overflow:hidden;min-height:112px;border:1px solid #ffffff20;border-radius:16px;padding:17px;background:linear-gradient(135deg,#282238,#151a28 72%);display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 24px #0004;transition:transform .25s,border-color .25s,box-shadow .25s;animation:tileIn .5s both}
+.genre-tile:nth-child(2n){background:linear-gradient(135deg,#35202c,#151a28 75%)}
+.genre-tile:before{content:"";position:absolute;width:115px;height:115px;border-radius:50%;right:-45px;top:-45px;background:radial-gradient(circle,#e5091430,transparent 70%);transition:transform .3s}
+.genre-tile:hover{transform:translateY(-5px);border-color:#ff526a88;box-shadow:0 16px 32px #e5091428}
+.genre-tile:hover:before{transform:scale(1.35)}
+.genre-emoji{font-size:25px;position:relative;z-index:1}
+.genre-tile strong{font-size:15px;position:relative;z-index:1}
+.genre-tile small{color:#bfc1ce;font-size:11px;position:relative;z-index:1}
+.trending-mark{display:inline-flex;align-items:center;justify-content:center;width:29px;height:29px;border-radius:9px;margin-right:5px;background:linear-gradient(145deg,#ff394f,#9e1534);box-shadow:0 4px 14px #e5091435;color:#fff;font-size:17px;vertical-align:-3px}
+.footer-brand{font-size:27px;font-weight:950;letter-spacing:4px;color:#fff;line-height:1.1}
+.footer-brand .trademark-dot{color:#e50914;font-size:1.25em}
+.footer-by{font-size:12px;letter-spacing:1.3px;color:#c6c7d1;margin-top:6px}
+footer{padding-top:35px;padding-bottom:45px}
+@media(max-width:950px){.genre-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.genre-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.genre-tile{min-height:100px;padding:14px}.genre-tile strong{font-size:14px}.hero-bg{filter:brightness(1.1)}}
+@media(prefers-reduced-motion:reduce){.filter,.genre-tile{animation:none;transition:none}}
+
 </style>
 </head>
 <body>
@@ -97,7 +126,7 @@ footer{margin-top:60px;padding:30px 0 35px;border-top:1px solid #ffffff1a;color:
 <a class="filter" href="#movies"><span class="ico">▣</span>All</a><a class="filter active" href="#trending"><span class="ico trend-icon" aria-hidden="true">↗</span>Trending</a><a class="filter" href="#editor"><span class="ico">☆</span>Top Rated</a><a class="filter" href="#ott"><span class="ico">▦</span>New Releases</a><a class="filter" href="#ott"><span class="ico">▷</span>OTT Releases</a><a class="filter" href="#indian"><span class="ico">🇮🇳</span>Indian</a><a class="filter" href="#international"><span class="ico">◎</span>International</a>
 </nav>
 <section class="section" id="trending">
-<div class="section-head"><h2>📈 Trending Now</h2><a class="view" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">View All →</a></div>
+<div class="section-head"><h2><span class="trending-mark" aria-hidden="true">↗</span>Trending Now</h2><a class="view" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">View All →</a></div>
 <p class="desc">A cinematic watchlist of popular titles to explore. Availability varies by service and region.</p>
 <div class="poster-row">
 <a class="poster" href="https://www.justwatch.com/in/search?q=Thamma" target="_blank" rel="noopener noreferrer"><img src="https://smart-cms-bkd-static-media.jnm.digital/jagran-hindi/images/2025/10/23/template/image/maddockfilms_1760251585_3741583945487276328_4436680603-1761193494509.jpg" alt="Thamma movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Thamma</h3><p>Horror · Comedy</p></span></a>
@@ -127,6 +156,33 @@ footer{margin-top:60px;padding:30px 0 35px;border-top:1px solid #ffffff1a;color:
 <a class="ott-card" href="https://www.justwatch.com/in/search?q=Lucky%20Baskhar" target="_blank" rel="noopener noreferrer"><img src="https://images.filmibeat.com/600x400/ph-big/img_og/lucky-baskhar-to-kalki-2898-ad-highest-grossing-telugu-movies-of-20241732872458.jpg" alt="Lucky Baskhar movie artwork" loading="lazy"><span class="platform">SonyLIV</span><span class="ott-copy"><h3>Lucky Baskhar</h3><p>Drama · Telugu</p></span></a>
 </div>
 </section>
+<section class="section" id="genres">
+<div class="section-head"><h2>🎭 Explore by Genre</h2><a class="view" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">Explore all →</a></div>
+<p class="desc">Pick a mood. Discover films and series across Indian cinema and global stories.</p>
+<div class="genre-grid">
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=action" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">⚡</span><strong>Action</strong><small>High energy & adventure</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=thriller" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🕵️</span><strong>Thriller</strong><small>Twists & suspense</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=comedy" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">😂</span><strong>Comedy</strong><small>Feel-good laughs</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=romance" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">❤️</span><strong>Romance</strong><small>Love & relationships</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=drama" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🎭</span><strong>Drama</strong><small>Stories that move you</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=horror" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🌑</span><strong>Horror</strong><small>Dark, eerie & chilling</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=science%20fiction" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🚀</span><strong>Sci-Fi</strong><small>Beyond the ordinary</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=fantasy" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🐉</span><strong>Fantasy</strong><small>Worlds of wonder</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=documentary" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🎥</span><strong>Documentary</strong><small>Real stories & facts</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=animation" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">✨</span><strong>Animation</strong><small>Imagination in motion</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=crime" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🔎</span><strong>Crime</strong><small>Cases & investigations</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=family" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🏡</span><strong>Family</strong><small>Watch together</small></a>
+</div></section>
+<section class="section" id="languages">
+<div class="section-head"><h2>🌏 Explore by Language</h2></div><p class="desc">From homegrown favourites to stories from around the world.</p>
+<div class="genre-grid">
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=Hindi" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🇮🇳</span><strong>Hindi</strong><small>Bollywood & beyond</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=Tamil" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🎬</span><strong>Tamil</strong><small>Kollywood stories</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=Telugu" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🎞️</span><strong>Telugu</strong><small>Blockbusters & drama</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=Malayalam" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🌴</span><strong>Malayalam</strong><small>Stories with depth</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=Kannada" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">⭐</span><strong>Kannada</strong><small>Fresh perspectives</small></a>
+<a class="genre-tile" href="https://www.justwatch.com/in/search?q=English" target="_blank" rel="noopener noreferrer"><span class="genre-emoji">🌐</span><strong>International</strong><small>Global cinema & series</small></a>
+</div></section>
 <section class="section" id="movies">
 <div class="section-head"><h2>🎬 Explore Movies</h2><a class="view" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">Browse all →</a></div>
 <p class="desc">Browse by mood, language or genre—and continue to a licensed streaming service.</p>
@@ -137,6 +193,6 @@ footer{margin-top:60px;padding:30px 0 35px;border-top:1px solid #ffffff1a;color:
 <p class="desc">An independent movie and series discovery guide. We do not host or stream films or episodes. Availability, subscriptions and playback are handled by official services.</p>
 </section>
 </main>
-<footer><div class="foot-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a><a href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">JustWatch India ↗</a></div><div>Universe by Savan Jee</div><div style="margin-top:8px">Movie artwork and trademarks belong to their respective rights holders. UNIVERSE is an independent discovery guide.</div></footer>
+<footer><div class="foot-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a><a href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">JustWatch India ↗</a></div><div class="footer-brand">UNIVERSE<span class="trademark-dot">.</span></div><div class="footer-by">by Savan Jee</div><div style="margin-top:8px">Movie artwork and trademarks belong to their respective rights holders. UNIVERSE is an independent discovery guide.</div></footer>
 </div>
 </body></html>
