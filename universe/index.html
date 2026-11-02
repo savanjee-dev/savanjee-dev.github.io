@@ -224,6 +224,7 @@ header{background:linear-gradient(180deg,#080b16f8 0%,#080b16e8 48%,#080b16b8 78
 footer{position:relative;border-top:0!important;margin-top:48px!important;padding-top:38px!important;background:linear-gradient(180deg,transparent 0%,#11152635 25%,#10132175 65%,#080b1690 100%)!important}
 footer:before{content:"";position:absolute;left:-5vw;right:-5vw;top:-45px;height:100px;pointer-events:none;background:radial-gradient(ellipse at 50% 100%,#22283a70,transparent 72%);filter:blur(15px)}
 @media(max-width:620px){header{background:linear-gradient(180deg,#080b16f5 0%,#080b16d8 65%,#080b1600 100%)!important}.hero{border-radius:0 0 18px 18px}.hero-dots{bottom:17px}}
+.hero-bg{position:absolute;inset:0;overflow:hidden;background:#080b16!important}.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 35%;filter:saturate(1.12) contrast(1.04);z-index:0}.hero-bg:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,#07090df5 0%,#07090de0 28%,#07090d85 49%,#07090d10 80%),linear-gradient(0deg,#080b16 0%,transparent 34%)}
 </style>
 </head>
 <body>
@@ -234,7 +235,7 @@ footer:before{content:"";position:absolute;left:-5vw;right:-5vw;top:-45px;height
 <a class="search" href="https://www.justwatch.com/in" aria-label="Search movies">⌕</a>
 </header>
 <main id="home">
-<section class="hero" id="hero-carousel" aria-label="Featured movies"><div class="hero-bg" id="hero-bg"></div><div class="hero-content" id="hero-content"><div class="eyebrow">UNIVERSE SPOTLIGHT · INDIAN CINEMA</div><h1 id="hero-title">KALKI <span>2898 AD</span></h1><div class="meta" id="hero-meta"><span>Action</span><span>Sci-Fi</span><span>Drama</span><span>2024</span></div><p class="hero-description" id="hero-description">In a dystopian future, the final battle for humanity’s survival begins with the birth of Kalki.</p><div class="actions"><a class="btn primary" id="hero-watch" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer">▶ &nbsp;Watch Now</a><a class="btn" id="hero-list" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer">＋ &nbsp;My List</a></div></div><button class="hero-arrow hero-prev" type="button" aria-label="Previous featured title">‹</button><button class="hero-arrow hero-next" type="button" aria-label="Next featured title">›</button><div class="hero-dots" id="hero-dots"><button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button><button aria-label="Slide 4"></button><button aria-label="Slide 5"></button></div></section>
+<section class="hero" id="hero-carousel" aria-label="Featured movies"><div class="hero-bg" id="hero-bg"><img id="hero-image" src="https://m.media-amazon.com/images/M/MV5BMTM3ZGUwYTEtZTI5NS00ZmMyLTk2YmQtMWU4YjlhZTI3NjRjXkEyXkFqcGc%40._V1_.jpg" alt="" aria-hidden="true"></div><div class="hero-content" id="hero-content"><div class="eyebrow">UNIVERSE SPOTLIGHT · INDIAN CINEMA</div><h1 id="hero-title">KALKI <span>2898 AD</span></h1><div class="meta" id="hero-meta"><span>Action</span><span>Sci-Fi</span><span>Drama</span><span>2024</span></div><p class="hero-description" id="hero-description">In a dystopian future, the final battle for humanity’s survival begins with the birth of Kalki.</p><div class="actions"><a class="btn primary" id="hero-watch" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer">▶ &nbsp;Watch Now</a><a class="btn" id="hero-list" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer">＋ &nbsp;My List</a></div></div><button class="hero-arrow hero-prev" type="button" aria-label="Previous featured title">‹</button><button class="hero-arrow hero-next" type="button" aria-label="Next featured title">›</button><div class="hero-dots" id="hero-dots"><button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button><button aria-label="Slide 4"></button><button aria-label="Slide 5"></button></div></section>
 <nav class="filters" aria-label="Browse categories">
 <a class="filter" href="#movies"><span class="ico">▣</span>All</a><a class="filter active" href="#trending"><span class="ico trend-icon" aria-hidden="true">↗</span>Trending</a><a class="filter" href="#editor"><span class="ico">☆</span>Top Rated</a><a class="filter" href="#ott"><span class="ico">▦</span>New Releases</a><a class="filter" href="#ott"><span class="ico">▷</span>OTT Releases</a><a class="filter" href="#indian"><span class="ico">🇮🇳</span>Indian</a><a class="filter" href="#international"><span class="ico">◎</span>International</a>
 </nav>
@@ -319,7 +320,7 @@ footer:before{content:"";position:absolute;left:-5vw;right:-5vw;top:-45px;height
   {title:'DUNE <span>PART TWO</span>',meta:['Sci-Fi','Adventure','Drama','2024'],desc:'Paul Atreides embraces his destiny across the vast and dangerous sands of Arrakis.',img:'https://image.tmdb.org/t/p/original/1pdfLvkbY9ohlahvL1e1Z6T9o8s.jpg',q:'Dune Part Two'},
   {title:'MAHAVATAR <span>NARSIMHA</span>',meta:['Animation','Action','Mythology','2025'],desc:'An animated mythological epic inspired by the powerful story of Narasimha.',img:'https://images.filmibeat.com/img/2025/07/mahavatar-narsimha-1751871258.jpg',q:'Mahavatar Narsimha'}
  ];
- const hero=document.getElementById('hero-carousel'), bg=document.getElementById('hero-bg'),
+ const hero=document.getElementById('hero-carousel'), bg=document.getElementById('hero-bg'), heroImage=document.getElementById('hero-image'),
  title=document.getElementById('hero-title'), meta=document.getElementById('hero-meta'),
  desc=document.getElementById('hero-description'), watch=document.getElementById('hero-watch'),
  list=document.getElementById('hero-list'), dots=[...document.querySelectorAll('#hero-dots button')];
@@ -331,9 +332,8 @@ footer:before{content:"";position:absolute;left:-5vw;right:-5vw;top:-45px;height
    desc.textContent=s.desc;
    const target='https://www.justwatch.com/in/search?q='+encodeURIComponent(s.q);
    watch.href=list.href=target;
-   bg.style.backgroundImage='linear-gradient(90deg,#080b16ed 0%,#080b16c9 30%,#080b1650 57%,transparent 85%),linear-gradient(0deg,#080b16 0%,transparent 34%),url("'+s.img+'")';
-   bg.style.backgroundPosition='center,center,70% 35%';
-   bg.style.backgroundSize='cover,cover,cover';
+   if(heroImage){heroImage.onerror=()=>{heroImage.onerror=null;heroImage.src='https://m.media-amazon.com/images/M/MV5BMTM3ZGUwYTEtZTI5NS00ZmMyLTk2YmQtMWU4YjlhZTI3NjRjXkEyXkFqcGc%40._V1_.jpg'};heroImage.src=s.img;heroImage.alt=s.q+' featured artwork';}
+   bg.style.backgroundImage='none';
    hero.dataset.slide=String(index);
    dots.forEach((dot,j)=>{dot.classList.toggle('active',j===index);dot.setAttribute('aria-current',j===index?'true':'false')});
  }
