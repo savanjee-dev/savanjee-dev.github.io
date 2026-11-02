@@ -39,6 +39,25 @@ footer{border-top:1px solid var(--line);margin-top:55px;padding:27px 0 34px;text
 @media(max-width:1000px){.row{grid-template-columns:repeat(4,minmax(0,1fr))}.platforms{grid-template-columns:repeat(2,1fr)}.hero{min-height:480px}}
 @media(max-width:650px){.wrap{width:calc(100% - 28px)}header{height:66px}.logo{font-size:24px}nav{gap:12px;font-size:12px}nav a:nth-child(3){display:none}.search{padding:8px 10px}.hero{min-height:470px;border-radius:14px}.hero:before{background:linear-gradient(90deg,#08090df2,#08090d99 65%,#08090d35),linear-gradient(0deg,#08090d,transparent 55%),url("https://images.unsplash.com/photo-1489599849927-2ee91dbd1b1?auto=format&fit=crop&w=1200&q=80") 60%/cover}.hero-content{padding:25px}.hero h1{letter-spacing:-2px}.hero p{font-size:15px}.btn{padding:13px 16px;font-size:13px}.row{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.poster-copy h3{font-size:17px}.section{margin:32px 0}.section h2{font-size:22px}.platforms{grid-template-columns:1fr 1fr;gap:10px}.platform{padding:15px;align-items:flex-start;flex-direction:column}.platform strong{font-size:14px}.feature{grid-template-columns:1fr}.feature-main,.feature-side{padding:23px}.feature-main h2{font-size:27px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+ 
+/* Cinematic refresh: luminous navy/plum ambience, warm film glow, richer cards */
+:root{--bg:#080b17;--surface:#171a2b;--muted:#b5b6c5;--red:#ff4057;--line:#ffffff20}
+body{background:radial-gradient(ellipse at 12% 16%,#38202d 0,transparent 35%),radial-gradient(ellipse at 88% 36%,#172d4b 0,transparent 38%),radial-gradient(ellipse at 70% 90%,#35162b 0,transparent 32%),#080b17}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(125deg,#070a14 5%,#121525 48%,#090b16 100%)}
+header{position:sticky;top:0;background:#090b16b8;backdrop-filter:blur(22px);border:1px solid #ffffff12;border-radius:0 0 18px 18px;padding:0 22px;margin-bottom:22px}
+.logo{font-size:27px;letter-spacing:2px}.logo:before{content:"✦";color:#ff5268;font-size:18px;margin-right:8px}
+nav a{padding:10px 13px;border-radius:999px;transition:background .2s,color .2s}nav a:hover{background:#ffffff14}
+.hero{min-height:570px;border:1px solid #ffffff1c;box-shadow:0 24px 80px #0008}
+.hero:before{background:linear-gradient(90deg,#080b17f5 0%,#080b17c9 35%,#080b1730 80%),linear-gradient(0deg,#080b17 0%,transparent 42%),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1900&q=90") center 42%/cover no-repeat}
+.hero-content{max-width:760px}.hero .kicker{color:#ffca8a}.hero h1{font-size:clamp(50px,7vw,94px);text-shadow:0 6px 35px #0009}.hero p{font-size:18px}
+.btn-red{background:linear-gradient(110deg,#ff4057,#a43b9d);box-shadow:0 8px 28px #ff40572e;border-radius:999px}.btn-light,.btn-dark{border-radius:999px}
+.section{margin:48px 0 58px}.section-head{margin-bottom:20px}.section h2{font-size:28px}
+.poster{border:1px solid #ffffff20;border-radius:16px;box-shadow:0 10px 30px #0005}.poster:after{background:linear-gradient(0deg,#050711f5 0%,#05071155 47%,transparent 78%)}.poster-copy{left:14px;bottom:16px}.poster-copy h3{font-size:19px}.poster-copy small{color:#ffc0c7}
+.feature-main,.feature-side{box-shadow:0 15px 45px #0003;border-radius:22px}.feature-main{background:linear-gradient(125deg,#302238,#171a2b 65%)}.feature-side{background:linear-gradient(125deg,#4a1b2c,#171a2b 72%)}
+.platform{background:linear-gradient(135deg,#222438dd,#121522dd);border-radius:17px;backdrop-filter:blur(10px)}
+footer{color:#a3a4b3}
+@media(max-width:650px){header{padding:0 8px;background:#090b16e8}.hero{min-height:500px}.hero:before{background:linear-gradient(90deg,#080b17ed,#080b17a0 70%,#080b1740),linear-gradient(0deg,#080b17,transparent 55%),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85") 60%/cover}.section h2{font-size:23px}}
+
 </style>
 </head>
 <body>
@@ -50,22 +69,21 @@ footer{border-top:1px solid var(--line);margin-top:55px;padding:27px 0 34px;text
 <main id="top">
 <section class="hero">
 <div class="hero-content">
-<div class="kicker">Your next binge starts here</div>
-<h1>Your next<br>great watch.</h1>
-<p>Discover Indian OTT releases, movie recommendations, streaming guides and official watch destinations — all in one cinematic place.</p>
-<div class="actions"><a class="btn btn-red" href="https://www.primevideo.com/" target="_blank" rel="noopener noreferrer">▶ Watch featured</a><a class="btn btn-light" href="#movies">Explore titles ↓</a></div>
-</div>
-</section>
-<section class="section" id="movies">
-<div class="section-head"><h2>🎬 Popular movie picks</h2><a href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">Check India availability →</a></div>
-<p style="color:#aaa;line-height:1.6;margin:-4px 0 18px">A starter watchlist of well-known films. Streaming availability changes by region and date, so use the links to check legal streaming, rental and purchase options.</p>
+<div class="kicker">NOW SHOWING · UNIVERSE SPOTLIGHT</div>
+<h1>Stories that<br>stay with you.</h1>
+<p>From big-screen spectacles to the next binge-worthy series—discover what’s worth watching, then find official destinations in India.</p>
+<div class="actions"><a class="btn btn-red" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">✦ Discover what to watch ↗</a><a class="btn btn-light" href="#trending">Explore trending ↓</a></div>
+</div></section>
+<section class="section" id="trending">
+<div class="section-head"><h2>🔥 Trending & upcoming in India</h2><a href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">Find streaming options ↗</a></div>
+<p style="color:#b7b8c5;line-height:1.6;margin:-4px 0 18px">A cinematic watchlist of recent and upcoming titles to keep an eye on. Release schedules and streaming availability can change; check official sources before planning your watch.</p>
 <div class="row">
-<a class="poster cover1" href="https://www.justwatch.com/in/search?q=12th%20Fail" target="_blank" rel="noopener noreferrer"><div class="cover-art">12</div><div class="poster-copy"><small>Hindi · Drama</small><h3>12th Fail</h3><p>Persistence · Coming-of-age</p></div></a>
-<a class="poster cover2" href="https://www.justwatch.com/in/search?q=Laapataa%20Ladies" target="_blank" rel="noopener noreferrer"><div class="cover-art">L</div><div class="poster-copy"><small>Hindi · Comedy drama</small><h3>Laapataa Ladies</h3><p>Identity · Heartwarming</p></div></a>
-<a class="poster cover3" href="https://www.justwatch.com/in/search?q=Manjummel%20Boys" target="_blank" rel="noopener noreferrer"><div class="cover-art">M</div><div class="poster-copy"><small>Malayalam · Survival</small><h3>Manjummel Boys</h3><p>Friendship · Thriller</p></div></a>
-<a class="poster cover4" href="https://www.justwatch.com/in/search?q=Jigra" target="_blank" rel="noopener noreferrer"><div class="cover-art">J</div><div class="poster-copy"><small>Hindi · Action drama</small><h3>Jigra</h3><p>Siblings · Action</p></div></a>
-<a class="poster cover5" href="https://www.justwatch.com/in/search?q=Amaran" target="_blank" rel="noopener noreferrer"><div class="cover-art">A</div><div class="poster-copy"><small>Tamil · Biographical</small><h3>Amaran</h3><p>War · Drama</p></div></a>
-<a class="poster cover6" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer"><div class="cover-art">K</div><div class="poster-copy"><small>Telugu · Sci-fi</small><h3>Kalki 2898 AD</h3><p>Epic · Science fiction</p></div></a>
+<a class="poster cover1" href="https://www.justwatch.com/in/search?q=Ramayana%20Part%201" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=85" alt="Epic landscape artwork"><div class="poster-copy"><small>Upcoming · Mythology</small><h3>Ramayana: Part 1</h3><p>Epic · Indian cinema</p></div></a>
+<a class="poster cover2" href="https://www.justwatch.com/in/search?q=Nakhrewaalii" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=85" alt="Ocean cinematic artwork"><div class="poster-copy"><small>Recent · Hindi</small><h3>Nakhrewaalii</h3><p>Romance · Drama</p></div></a>
+<a class="poster cover3" href="https://www.justwatch.com/in/search?q=Pyre%202026" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=700&q=85" alt="Sunset landscape artwork"><div class="poster-copy"><small>Recent · Drama</small><h3>Pyre</h3><p>Drama · Romance</p></div></a>
+<a class="poster cover4" href="https://www.justwatch.com/in/search?q=Daayra" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=700&q=85" alt="Night sky cinematic artwork"><div class="poster-copy"><small>Coming soon · Thriller</small><h3>Daayra</h3><p>Crime · Mystery</p></div></a>
+<a class="poster cover5" href="https://www.justwatch.com/in/search?q=Gunmaaster%20G9" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=700&q=85" alt="Dark cinematic artwork"><div class="poster-copy"><small>Upcoming · Action</small><h3>Gunmaaster G9</h3><p>Action · Thriller</p></div></a>
+<a class="poster cover6" href="https://www.justwatch.com/in/search?q=Yeh%20Prem%20Mol%20Liya" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=700&q=85" alt="Mountain cinematic artwork"><div class="poster-copy"><small>Upcoming · Hindi</small><h3>Yeh Prem Mol Liya</h3><p>Family · Romance</p></div></a>
 </div></section>
 <section class="section" id="series">
 <div class="section-head"><h2>📺 Series worth exploring</h2><a href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">Browse streaming options →</a></div>
