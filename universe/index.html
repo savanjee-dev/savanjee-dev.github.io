@@ -205,6 +205,25 @@ footer>div:last-child{position:relative;z-index:1;color:#8f93a3;font-size:11px;l
 #trending .poster{aspect-ratio:1.05/1;border-radius:11px}#trending .poster-copy{bottom:10px;left:10px}#trending .poster-copy h3{font-size:clamp(12px,1.25vw,17px)}#trending .poster-copy p,#trending .poster-copy small{display:none}#trending .poster:after{background:linear-gradient(0deg,#08090df0,transparent 55%)}
 @media(max-width:950px){#trending .poster-row{grid-template-columns:repeat(7,150px);overflow-x:auto;padding-bottom:8px}}
 @media(max-width:620px){.hero{height:450px}.hero-content{left:22px;right:22px;top:51%;transform:translateY(-50%)}.hero h1{font-size:52px}.hero h1 span{font-size:.4em;letter-spacing:5px}.hero-description{font-size:13px;max-width:290px}.hero-arrow{width:36px;height:36px;font-size:26px}.hero-prev{left:8px}.hero-next{right:8px}.hero-dots{bottom:15px}#trending .poster-row{grid-template-columns:repeat(7,145px)}}
+
+/* Seamless cinematic transitions; footer markup/signature intentionally untouched */
+header{background:linear-gradient(180deg,#080b16f8 0%,#080b16e8 48%,#080b16b8 78%,#080b1600 100%)!important;border-bottom:0!important;box-shadow:none!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.hero{margin-top:-1px;border-top-left-radius:0;border-top-right-radius:0;box-shadow:0 18px 50px #0002}
+.hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,#080b1630 0%,transparent 17%),linear-gradient(90deg,#080b16ed 0%,#080b16c9 30%,#080b1650 57%,transparent 85%),linear-gradient(0deg,#080b16 0%,transparent 34%)}
+.hero-dots{left:50%!important;transform:translateX(-50%);display:flex;align-items:center;gap:8px;bottom:24px}
+.hero-dots button{width:11px;height:11px;border-radius:50%;background:#ffffff75;border:0;padding:0;opacity:.78;transition:width .35s,height .35s,opacity .35s,transform .35s,background .35s}
+.hero-dots button:nth-child(2),.hero-dots button:nth-child(4){width:8px;height:8px;opacity:.55}
+.hero-dots button:nth-child(3){width:6px;height:6px;opacity:.38}
+.hero-dots button:nth-child(5){width:4px;height:4px;opacity:.2}
+.hero-dots button.active{width:12px;height:12px;opacity:1;transform:scale(1);background:#fff;box-shadow:0 0 12px #ffffff70}
+.hero-dots button.active~button{opacity:.28}
+.filters{border:0!important;box-shadow:none!important;background:transparent!important}
+.section{position:relative}
+.section:before{content:"";position:absolute;left:-5vw;right:-5vw;top:-28px;height:70px;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at center,#17203360 0%,transparent 72%);filter:blur(12px)}
+.poster,.editor-card,.ott-card,.filter,.genre-tile,.guide article{border-color:#ffffff12;box-shadow:0 12px 28px #0003}
+footer{position:relative;border-top:0!important;margin-top:48px!important;padding-top:38px!important;background:linear-gradient(180deg,transparent 0%,#11152635 25%,#10132175 65%,#080b1690 100%)!important}
+footer:before{content:"";position:absolute;left:-5vw;right:-5vw;top:-45px;height:100px;pointer-events:none;background:radial-gradient(ellipse at 50% 100%,#22283a70,transparent 72%);filter:blur(15px)}
+@media(max-width:620px){header{background:linear-gradient(180deg,#080b16f5 0%,#080b16d8 65%,#080b1600 100%)!important}.hero{border-radius:0 0 18px 18px}.hero-dots{bottom:17px}}
 </style>
 </head>
 <body>
@@ -298,6 +317,6 @@ footer>div:last-child{position:relative;z-index:1;color:#8f93a3;font-size:11px;l
 {title:'DUNE <span>PART TWO</span>',meta:['Sci-Fi','Adventure','Drama','2024'],desc:'A journey across the sands that will change the fate of an empire.',img:'https://images.filmibeat.com/img/2024/03/dune-part-two-1709549188.jpg',q:'Dune Part Two'},
 {title:'MAHAVATAR <span>NARSIMHA</span>',meta:['Animation','Action','Mythology','2025'],desc:'A mythic tale of faith, courage, and the triumph of good over evil.',img:'https://images.filmibeat.com/img/2025/07/mahavatar-narsimha-1751871258.jpg',q:'Mahavatar Narsimha'}];
 const bg=document.getElementById('hero-bg'),title=document.getElementById('hero-title'),meta=document.getElementById('hero-meta'),desc=document.getElementById('hero-description'),watch=document.getElementById('hero-watch'),list=document.getElementById('hero-list'),dots=[...document.querySelectorAll('#hero-dots button')],hero=document.getElementById('hero-carousel');let i=0,t;
-function show(n){i=(n+slides.length)%slides.length;const s=slides[i];title.innerHTML=s.title;meta.innerHTML=s.meta.map(x=>'<span>'+x+'</span>').join('');desc.textContent=s.desc;watch.href=list.href='https://www.justwatch.com/in/search?q='+encodeURIComponent(s.q);bg.style.backgroundImage='linear-gradient(90deg,#07090df5 0%,#07090de0 28%,#07090d85 49%,#07090d10 80%),linear-gradient(0deg,#07090d8a,transparent 30%),url("'+s.img+'")';dots.forEach((d,j)=>d.classList.toggle('active',j===i))}
-function start(){clearInterval(t);t=setInterval(()=>show(i+1),6500)}
+function show(n){i=(n+slides.length)%slides.length;const s=slides[i];title.innerHTML=s.title;meta.innerHTML=s.meta.map(x=>'<span>'+x+'</span>').join('');desc.textContent=s.desc;watch.href=list.href='https://www.justwatch.com/in/search?q='+encodeURIComponent(s.q);bg.style.backgroundImage='linear-gradient(90deg,#080b16ed 0%,#080b16c9 30%,#080b1650 57%,transparent 85%),linear-gradient(0deg,#080b16 0%,transparent 34%),url("'+s.img+'")';dots.forEach((d,j)=>d.classList.toggle('active',j===i))}
+function start(){clearInterval(t);t=setInterval(()=>show(i+1),6000)}
 document.querySelector('.hero-next').addEventListener('click',()=>{show(i+1);start()});document.querySelector('.hero-prev').addEventListener('click',()=>{show(i-1);start()});dots.forEach((d,j)=>d.addEventListener('click',()=>{show(j);start()}));hero.addEventListener('mouseenter',()=>clearInterval(t));hero.addEventListener('mouseleave',start);show(0);start()})();</script></body></html>
