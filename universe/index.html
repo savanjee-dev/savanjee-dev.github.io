@@ -308,6 +308,19 @@ footer .footer-wordmark-group .footer-by{
  footer .footer-by{font-size:11px!important;letter-spacing:.8px!important}
 }
 
+
+/* Resilient poster fallbacks: broken remote artwork never leaves a blank card */
+.poster.image-failed,.editor-card.image-failed,.ott-card.image-failed{
+ background:radial-gradient(circle at 70% 20%,#542438 0%,#242238 38%,#101522 100%);
+}
+.poster.image-failed:before,.editor-card.image-failed:before,.ott-card.image-failed:before{
+ content:attr(data-title);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+ padding:18px;text-align:center;color:#f8f8fb;font-weight:900;font-size:clamp(14px,2vw,24px);
+ letter-spacing:.3px;text-shadow:0 3px 16px #000b;z-index:0;
+}
+.poster.image-failed img,.editor-card.image-failed img,.ott-card.image-failed img{display:none!important}
+.poster.image-failed:after,.editor-card.image-failed:after,.ott-card.image-failed:after{background:linear-gradient(0deg,#070912b8,transparent 75%)}
+
 </style>
 </head>
 <body>
@@ -326,33 +339,33 @@ footer .footer-wordmark-group .footer-by{
 <div class="section-head"><h2><span class="trending-mark" aria-hidden="true">↗</span>Trending Now</h2><a class="view" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">View All →</a></div>
 <p class="desc">A cinematic watchlist of popular titles to explore. Availability varies by service and region.</p>
 <div class="poster-row">
-<a class="poster" href="https://www.justwatch.com/in/search?q=Thamma" target="_blank" rel="noopener noreferrer"><img src="https://smart-cms-bkd-static-media.jnm.digital/jagran-hindi/images/2025/10/23/template/image/maddockfilms_1760251585_3741583945487276328_4436680603-1761193494509.jpg" alt="Thamma movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Thamma</h3><p>Horror · Comedy</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=Ikkis" target="_blank" rel="noopener noreferrer"><img src="https://m.media-amazon.com/images/M/MV5BYWJkZjg2ZTktYmQ3OC00OTJmLTg4ODUtZWUzNWYwYjg0MTA1XkEyXkFqcGc%40._V1_.jpg" alt="Ikkis movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Ikkis</h3><p>War · Biography</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=Kantara%20Chapter%201" target="_blank" rel="noopener noreferrer"><img src="https://m.media-amazon.com/images/M/MV5BMjZjY2EyNzUtYWFiZS00YTdkLWI5M2MtZDI5N2MwZjFmZTY4XkEyXkFqcGc%40._V1_.jpg" alt="Kantara Chapter 1 poster" loading="lazy"><span class="poster-copy"><small>Kannada · Hindi</small><h3>Kantara: Chapter 1</h3><p>Mythology · Action</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=Baaghi%204" target="_blank" rel="noopener noreferrer"><img src="https://img.republicworld.com/all_images/GzfzmqubkAMT57u-1756813479428.webp" alt="Baaghi 4 movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Baaghi 4</h3><p>Action · Thriller</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=The%20Conjuring%20Last%20Rites" target="_blank" rel="noopener noreferrer"><img src="https://d3lmgsai2rsy7d.cloudfront.net/xuan/media/article/2025/May/theconjuring4-poster.jpg" alt="The Conjuring Last Rites poster" loading="lazy"><span class="poster-copy"><small>English · Hindi</small><h3>The Conjuring: Last Rites</h3><p>Horror · Mystery</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=Deva" target="_blank" rel="noopener noreferrer"><img src="https://m.media-amazon.com/images/M/MV5BMTg2NzQzNzgtMDM2NC00Y2YxLTg4MDMtMDNhYTY2NTQ5ZjJjXkEyXkFqcGc%40._V1_.jpg" alt="Deva movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Deva</h3><p>Action · Thriller</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=Kill" target="_blank" rel="noopener noreferrer"><img src="https://m.media-amazon.com/images/M/MV5BNjI0YjYxZjctZGRiMy00NzZhLTg5NjMtY2VlMDJiMTI0Y2UyXkEyXkFqcGc%40._V1_.jpg" alt="Kill movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Kill</h3><p>Action · Thriller</p></span></a>
+<a class="poster" href="movie.html?title=Thamma"><img src="https://smart-cms-bkd-static-media.jnm.digital/jagran-hindi/images/2025/10/23/template/image/maddockfilms_1760251585_3741583945487276328_4436680603-1761193494509.jpg" alt="Thamma movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Thamma</h3><p>Horror · Comedy</p></span></a>
+<a class="poster" href="movie.html?title=Ikkis"><img src="https://m.media-amazon.com/images/M/MV5BYWJkZjg2ZTktYmQ3OC00OTJmLTg4ODUtZWUzNWYwYjg0MTA1XkEyXkFqcGc%40._V1_.jpg" alt="Ikkis movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Ikkis</h3><p>War · Biography</p></span></a>
+<a class="poster" href="movie.html?title=Kantara%3A%20Chapter%201"><img src="https://m.media-amazon.com/images/M/MV5BMjZjY2EyNzUtYWFiZS00YTdkLWI5M2MtZDI5N2MwZjFmZTY4XkEyXkFqcGc%40._V1_.jpg" alt="Kantara Chapter 1 poster" loading="lazy"><span class="poster-copy"><small>Kannada · Hindi</small><h3>Kantara: Chapter 1</h3><p>Mythology · Action</p></span></a>
+<a class="poster" href="movie.html?title=Baaghi%204"><img src="https://img.republicworld.com/all_images/GzfzmqubkAMT57u-1756813479428.webp" alt="Baaghi 4 movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Baaghi 4</h3><p>Action · Thriller</p></span></a>
+<a class="poster" href="movie.html?title=The%20Conjuring%3A%20Last%20Rites"><img src="https://d3lmgsai2rsy7d.cloudfront.net/xuan/media/article/2025/May/theconjuring4-poster.jpg" alt="The Conjuring Last Rites poster" loading="lazy"><span class="poster-copy"><small>English · Hindi</small><h3>The Conjuring: Last Rites</h3><p>Horror · Mystery</p></span></a>
+<a class="poster" href="movie.html?title=Deva"><img src="https://m.media-amazon.com/images/M/MV5BMTg2NzQzNzgtMDM2NC00Y2YxLTg4MDMtMDNhYTY2NTQ5ZjJjXkEyXkFqcGc%40._V1_.jpg" alt="Deva movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Deva</h3><p>Action · Thriller</p></span></a>
+<a class="poster" href="movie.html?title=Kill"><img src="https://m.media-amazon.com/images/M/MV5BNjI0YjYxZjctZGRiMy00NzZhLTg5NjMtY2VlMDJiMTI0Y2UyXkEyXkFqcGc%40._V1_.jpg" alt="Kill movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Kill</h3><p>Action · Thriller</p></span></a>
 </div>
 </section>
 <section class="section" id="editor">
 <div class="section-head"><h2>⭐ Editor’s Picks</h2><a class="view" href="#movies">View All →</a></div>
 <p class="desc">Handpicked films with memorable stories and characters.</p>
 <div class="editor-grid">
-<a class="editor-card" href="https://www.justwatch.com/in/search?q=12th%20Fail" target="_blank" rel="noopener noreferrer"><img src="https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2024/12/vs1ITG-1734602003634.jpg?size=%2A%3A900" alt="12th Fail poster" loading="lazy"><span class="editor-text"><h3>12th Fail</h3><p>A powerful real story of determination and resilience.</p></span><span class="play">▶</span></a>
-<a class="editor-card" href="https://www.justwatch.com/in/search?q=Laapataa%20Ladies" target="_blank" rel="noopener noreferrer"><img src="https://mxp-media.ilnmedia.com/media/content/2024/May/social-manjummel-boys-laapataa-ladies-best-Indian-films-2024_6639d59b6f656.jpeg" alt="Laapataa Ladies poster collage" loading="lazy"><span class="editor-text"><h3>Laapataa Ladies</h3><p>A heartfelt tale of identity, freedom and self-discovery.</p></span><span class="play">▶</span></a>
-<a class="editor-card" href="https://www.justwatch.com/in/search?q=Manjummel%20Boys" target="_blank" rel="noopener noreferrer"><img src="https://media.dinamani.com/dinamani/2024-02/51e31203-9898-4760-8a86-f09a865b56bf/manju.jpg" alt="Manjummel Boys poster" loading="lazy"><span class="editor-text"><h3>Manjummel Boys</h3><p>A gripping survival story about friendship that stays with you.</p></span><span class="play">▶</span></a>
+<a class="editor-card" href="movie.html?title=12th%20Fail"><img src="https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2024/12/vs1ITG-1734602003634.jpg?size=%2A%3A900" alt="12th Fail poster" loading="lazy"><span class="editor-text"><h3>12th Fail</h3><p>A powerful real story of determination and resilience.</p></span><span class="play">▶</span></a>
+<a class="editor-card" href="movie.html?title=Laapataa%20Ladies"><img src="https://mxp-media.ilnmedia.com/media/content/2024/May/social-manjummel-boys-laapataa-ladies-best-Indian-films-2024_6639d59b6f656.jpeg" alt="Laapataa Ladies poster collage" loading="lazy"><span class="editor-text"><h3>Laapataa Ladies</h3><p>A heartfelt tale of identity, freedom and self-discovery.</p></span><span class="play">▶</span></a>
+<a class="editor-card" href="movie.html?title=Manjummel%20Boys"><img src="https://media.dinamani.com/dinamani/2024-02/51e31203-9898-4760-8a86-f09a865b56bf/manju.jpg" alt="Manjummel Boys poster" loading="lazy"><span class="editor-text"><h3>Manjummel Boys</h3><p>A gripping survival story about friendship that stays with you.</p></span><span class="play">▶</span></a>
 </div>
 </section>
 <section class="section" id="ott">
 <div class="section-head"><h2>🎞 What’s New on OTT</h2><a class="view" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">View All →</a></div>
 <p class="desc">Explore films and series across major streaming platforms. Check each service for current availability.</p>
 <div class="ott-row">
-<a class="ott-card" href="https://www.justwatch.com/in/search?q=Amaran" target="_blank" rel="noopener noreferrer"><img src="https://timelinedaily.com/assets/2024/11/luck-doesnt-knock-twice-unless-youre-baskhar-watch-lucky-baskhar-on-netflix-amal-neerad-movie-bougainvillea-majormukundvaradarajan-jigra.jpg" alt="Amaran and OTT poster artwork" loading="lazy"><span class="platform">Netflix</span><span class="ott-copy"><h3>Amaran</h3><p>Netflix · Tamil</p></span></a>
-<a class="ott-card" href="https://www.justwatch.com/in/search?q=Jigra" target="_blank" rel="noopener noreferrer"><img src="https://timelinedaily.com/assets/2024/11/luck-doesnt-knock-twice-unless-youre-baskhar-watch-lucky-baskhar-on-netflix-amal-neerad-movie-bougainvillea-majormukundvaradarajan-jigra.jpg" alt="Jigra poster artwork" loading="lazy"><span class="platform">Prime Video</span><span class="ott-copy"><h3>Jigra</h3><p>Prime Video · Hindi</p></span></a>
-<a class="ott-card" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer"><img src="https://images.filmibeat.com/600x400/ph-big/img_og/lucky-baskhar-to-kalki-2898-ad-highest-grossing-telugu-movies-of-20241732872458.jpg" alt="Kalki 2898 AD poster artwork" loading="lazy"><span class="platform">Netflix</span><span class="ott-copy"><h3>Kalki 2898 AD</h3><p>OTT · Telugu</p></span></a>
-<a class="ott-card" href="https://www.justwatch.com/in/search?q=HIT%3A%20The%203rd%20Case" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=700&q=85" alt="Crime thriller artwork" loading="lazy"><span class="platform">JioHotstar</span><span class="ott-copy"><h3>HIT: The 3rd Case</h3><p>Crime · Telugu</p></span></a>
-<a class="ott-card" href="https://www.justwatch.com/in/search?q=Lucky%20Baskhar" target="_blank" rel="noopener noreferrer"><img src="https://images.filmibeat.com/600x400/ph-big/img_og/lucky-baskhar-to-kalki-2898-ad-highest-grossing-telugu-movies-of-20241732872458.jpg" alt="Lucky Baskhar movie artwork" loading="lazy"><span class="platform">SonyLIV</span><span class="ott-copy"><h3>Lucky Baskhar</h3><p>Drama · Telugu</p></span></a>
+<a class="ott-card" href="movie.html?title=Amaran"><img src="https://timelinedaily.com/assets/2024/11/luck-doesnt-knock-twice-unless-youre-baskhar-watch-lucky-baskhar-on-netflix-amal-neerad-movie-bougainvillea-majormukundvaradarajan-jigra.jpg" alt="Amaran and OTT poster artwork" loading="lazy"><span class="platform">Netflix</span><span class="ott-copy"><h3>Amaran</h3><p>Netflix · Tamil</p></span></a>
+<a class="ott-card" href="movie.html?title=Jigra"><img src="https://timelinedaily.com/assets/2024/11/luck-doesnt-knock-twice-unless-youre-baskhar-watch-lucky-baskhar-on-netflix-amal-neerad-movie-bougainvillea-majormukundvaradarajan-jigra.jpg" alt="Jigra poster artwork" loading="lazy"><span class="platform">Prime Video</span><span class="ott-copy"><h3>Jigra</h3><p>Prime Video · Hindi</p></span></a>
+<a class="ott-card" href="movie.html?title=Kalki%202898%20AD"><img src="https://images.filmibeat.com/600x400/ph-big/img_og/lucky-baskhar-to-kalki-2898-ad-highest-grossing-telugu-movies-of-20241732872458.jpg" alt="Kalki 2898 AD poster artwork" loading="lazy"><span class="platform">Netflix</span><span class="ott-copy"><h3>Kalki 2898 AD</h3><p>OTT · Telugu</p></span></a>
+<a class="ott-card" href="movie.html?title=HIT%3A%20The%203rd%20Case"><img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=700&q=85" alt="Crime thriller artwork" loading="lazy"><span class="platform">JioHotstar</span><span class="ott-copy"><h3>HIT: The 3rd Case</h3><p>Crime · Telugu</p></span></a>
+<a class="ott-card" href="movie.html?title=Lucky%20Baskhar"><img src="https://images.filmibeat.com/600x400/ph-big/img_og/lucky-baskhar-to-kalki-2898-ad-highest-grossing-telugu-movies-of-20241732872458.jpg" alt="Lucky Baskhar movie artwork" loading="lazy"><span class="platform">SonyLIV</span><span class="ott-copy"><h3>Lucky Baskhar</h3><p>Drama · Telugu</p></span></a>
 </div>
 </section>
 <section class="section" id="genres">
@@ -432,7 +445,22 @@ footer .footer-wordmark-group .footer-by{
  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
  show(0);start();
 })();
-</script></body></html>
+</script>
+<script id="universe-poster-fallbacks">
+(() => {
+ document.querySelectorAll('.poster,.editor-card,.ott-card').forEach(card => {
+  const image=card.querySelector('img');
+  const title=card.querySelector('h3')?.textContent.trim() || image?.alt || 'Artwork unavailable';
+  card.dataset.title=title;
+  const failed=()=>{card.classList.add('image-failed');if(image)image.style.display='none'};
+  if(!image){failed();return}
+  image.addEventListener('error',failed,{once:true});
+  if(image.complete && image.naturalWidth===0) failed();
+ });
+})();
+</script>
+
+</body></html>
 /* Header selected tab: Netflix red blended into the cinematic dark nav */
 header .nav a.active{
  color:#fff;
