@@ -308,6 +308,60 @@ footer .footer-wordmark-group .footer-by{
  footer .footer-by{font-size:11px!important;letter-spacing:.8px!important}
 }
 
+
+/* Resilient poster fallbacks: broken remote artwork never leaves a blank card */
+.poster.image-failed,.editor-card.image-failed,.ott-card.image-failed{
+ background:radial-gradient(circle at 70% 20%,#542438 0%,#242238 38%,#101522 100%);
+}
+.poster.image-failed:before,.editor-card.image-failed:before,.ott-card.image-failed:before{
+ content:attr(data-title);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+ padding:18px;text-align:center;color:#f8f8fb;font-weight:900;font-size:clamp(14px,2vw,24px);
+ letter-spacing:.3px;text-shadow:0 3px 16px #000b;z-index:0;
+}
+.poster.image-failed img,.editor-card.image-failed img,.ott-card.image-failed img{display:none!important}
+.poster.image-failed:after,.editor-card.image-failed:after,.ott-card.image-failed:after{background:linear-gradient(0deg,#070912b8,transparent 75%)}
+
+
+/* Accessible local movie search */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}\n.search{color:#fff;cursor:pointer}
+.search:focus-visible,.search-dialog input:focus-visible,.search-result:focus-visible{outline:2px solid #ff526a;outline-offset:3px}
+.search-dialog{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:12vh 18px 24px;background:#03050bd9;backdrop-filter:blur(12px)}
+.search-dialog.open{display:flex}
+.search-panel{width:min(680px,100%);max-height:78vh;overflow:auto;border:1px solid #ffffff25;border-radius:22px;background:linear-gradient(145deg,#1a1d2b,#0e111b);box-shadow:0 30px 100px #000b;padding:22px}
+.search-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.search-panel-head h2{margin:0;font-size:22px}
+.search-close{border:1px solid #ffffff25;background:#ffffff0b;color:#fff;border-radius:12px;width:40px;height:40px;cursor:pointer;font-size:20px}
+.search-dialog input{width:100%;border:1px solid #ffffff30;background:#080b16;color:#fff;border-radius:14px;padding:15px 16px;font:inherit;outline:none}
+.search-results{display:grid;gap:8px;margin-top:14px}
+.search-result{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;border:1px solid #ffffff12;border-radius:13px;background:#ffffff06;transition:background .18s,border-color .18s}
+.search-result:hover{background:#e5091417;border-color:#e5091466}
+.search-result strong{display:block;font-size:14px}.search-result small{display:block;color:#aeb3c3;font-size:11px;margin-top:3px}
+.search-empty{color:#b8bac8;padding:18px 4px;font-size:13px}
+@media(max-width:600px){.search-dialog{padding:8vh 12px 18px}.search-panel{padding:16px;border-radius:18px}.search-panel-head h2{font-size:19px}}
+
+/* Header selected tab: Netflix red blended into the cinematic dark nav */
+header .nav a.active{
+ color:#fff;
+ background:linear-gradient(120deg,#e50914 0%,#b20710 42%,#4a1824 100%);
+ border:1px solid #ff4b57a6;
+ box-shadow:0 5px 18px #e5091438,inset 0 1px #ffffff35,0 0 0 1px #e509141c;
+ text-shadow:0 1px 8px #0007;
+}
+header .nav a.active:hover{
+ background:linear-gradient(120deg,#f6121d 0%,#c40812 42%,#5a1b2a 100%);
+ box-shadow:0 7px 22px #e5091450,inset 0 1px #ffffff45;
+}
+header .nav a:not(.active):hover{
+ color:#fff;
+ background:linear-gradient(120deg,#3a2028aa,#24212dbb);
+ box-shadow:inset 0 0 0 1px #e509143d;
+}
+
+
+
+/* Footer signature: byline sits directly beneath the red trademark dot */
+.footer-wordmark-group{align-items:flex-end!important}
+.footer-wordmark-group .footer-by{align-self:flex-end!important;text-align:right!important;margin-top:3px!important}
 </style>
 </head>
 <body>
@@ -315,7 +369,7 @@ footer .footer-wordmark-group .footer-by{
 <header>
 <a class="brand" href="index.html"><span class="brand-word">UNIVERSE<span class="trademark-dot">.</span></span><small>Movies · Series · OTT · Discover</small></a>
 <nav class="nav" aria-label="Main navigation"><a class="active" href="#home">⌂ &nbsp;Home</a><a href="#movies">▣ &nbsp;Movies</a><a href="#series">▣ &nbsp;Series</a><a href="#ott">▱ &nbsp;OTT</a><a href="#more">More⌄</a></nav>
-<a class="search" href="https://www.justwatch.com/in" aria-label="Search movies">⌕</a>
+<button class="search" id="open-search" type="button" aria-label="Search movies" aria-haspopup="dialog" aria-controls="universe-search">⌕</button>
 </header>
 <main id="home">
 <section class="hero" id="hero-carousel" aria-label="Featured movies"><div class="hero-bg" id="hero-bg"><img id="hero-image" src="https://m.media-amazon.com/images/M/MV5BMTM3ZGUwYTEtZTI5NS00ZmMyLTk2YmQtMWU4YjlhZTI3NjRjXkEyXkFqcGc%40._V1_.jpg" alt="" aria-hidden="true"></div><div class="hero-content" id="hero-content"><div class="eyebrow">UNIVERSE SPOTLIGHT · INDIAN CINEMA</div><h1 id="hero-title">KALKI <span>2898 AD</span></h1><div class="meta" id="hero-meta"><span>Action</span><span>Sci-Fi</span><span>Drama</span><span>2024</span></div><p class="hero-description" id="hero-description">In a dystopian future, the final battle for humanity’s survival begins with the birth of Kalki.</p><div class="actions"><a class="btn primary" id="hero-watch" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer">▶ &nbsp;Watch Now</a><a class="btn" id="hero-list" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer">＋ &nbsp;My List</a></div></div><button class="hero-arrow hero-prev" type="button" aria-label="Previous featured title">‹</button><button class="hero-arrow hero-next" type="button" aria-label="Next featured title">›</button><div class="hero-dots" id="hero-dots"><button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button><button aria-label="Slide 4"></button><button aria-label="Slide 5"></button></div></section>
@@ -326,33 +380,33 @@ footer .footer-wordmark-group .footer-by{
 <div class="section-head"><h2><span class="trending-mark" aria-hidden="true">↗</span>Trending Now</h2><a class="view" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">View All →</a></div>
 <p class="desc">A cinematic watchlist of popular titles to explore. Availability varies by service and region.</p>
 <div class="poster-row">
-<a class="poster" href="https://www.justwatch.com/in/search?q=Thamma" target="_blank" rel="noopener noreferrer"><img src="https://smart-cms-bkd-static-media.jnm.digital/jagran-hindi/images/2025/10/23/template/image/maddockfilms_1760251585_3741583945487276328_4436680603-1761193494509.jpg" alt="Thamma movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Thamma</h3><p>Horror · Comedy</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=Ikkis" target="_blank" rel="noopener noreferrer"><img src="https://m.media-amazon.com/images/M/MV5BYWJkZjg2ZTktYmQ3OC00OTJmLTg4ODUtZWUzNWYwYjg0MTA1XkEyXkFqcGc%40._V1_.jpg" alt="Ikkis movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Ikkis</h3><p>War · Biography</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=Kantara%20Chapter%201" target="_blank" rel="noopener noreferrer"><img src="https://m.media-amazon.com/images/M/MV5BMjZjY2EyNzUtYWFiZS00YTdkLWI5M2MtZDI5N2MwZjFmZTY4XkEyXkFqcGc%40._V1_.jpg" alt="Kantara Chapter 1 poster" loading="lazy"><span class="poster-copy"><small>Kannada · Hindi</small><h3>Kantara: Chapter 1</h3><p>Mythology · Action</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=Baaghi%204" target="_blank" rel="noopener noreferrer"><img src="https://img.republicworld.com/all_images/GzfzmqubkAMT57u-1756813479428.webp" alt="Baaghi 4 movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Baaghi 4</h3><p>Action · Thriller</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=The%20Conjuring%20Last%20Rites" target="_blank" rel="noopener noreferrer"><img src="https://d3lmgsai2rsy7d.cloudfront.net/xuan/media/article/2025/May/theconjuring4-poster.jpg" alt="The Conjuring Last Rites poster" loading="lazy"><span class="poster-copy"><small>English · Hindi</small><h3>The Conjuring: Last Rites</h3><p>Horror · Mystery</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=Deva" target="_blank" rel="noopener noreferrer"><img src="https://m.media-amazon.com/images/M/MV5BMTg2NzQzNzgtMDM2NC00Y2YxLTg4MDMtMDNhYTY2NTQ5ZjJjXkEyXkFqcGc%40._V1_.jpg" alt="Deva movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Deva</h3><p>Action · Thriller</p></span></a>
-<a class="poster" href="https://www.justwatch.com/in/search?q=Kill" target="_blank" rel="noopener noreferrer"><img src="https://m.media-amazon.com/images/M/MV5BNjI0YjYxZjctZGRiMy00NzZhLTg5NjMtY2VlMDJiMTI0Y2UyXkEyXkFqcGc%40._V1_.jpg" alt="Kill movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Kill</h3><p>Action · Thriller</p></span></a>
+<a class="poster" href="movie.html?title=Thamma"><img src="https://smart-cms-bkd-static-media.jnm.digital/jagran-hindi/images/2025/10/23/template/image/maddockfilms_1760251585_3741583945487276328_4436680603-1761193494509.jpg" alt="Thamma movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Thamma</h3><p>Horror · Comedy</p></span></a>
+<a class="poster" href="movie.html?title=Ikkis"><img src="https://m.media-amazon.com/images/M/MV5BYWJkZjg2ZTktYmQ3OC00OTJmLTg4ODUtZWUzNWYwYjg0MTA1XkEyXkFqcGc%40._V1_.jpg" alt="Ikkis movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Ikkis</h3><p>War · Biography</p></span></a>
+<a class="poster" href="movie.html?title=Kantara%3A%20Chapter%201"><img src="https://m.media-amazon.com/images/M/MV5BMjZjY2EyNzUtYWFiZS00YTdkLWI5M2MtZDI5N2MwZjFmZTY4XkEyXkFqcGc%40._V1_.jpg" alt="Kantara Chapter 1 poster" loading="lazy"><span class="poster-copy"><small>Kannada · Hindi</small><h3>Kantara: Chapter 1</h3><p>Mythology · Action</p></span></a>
+<a class="poster" href="movie.html?title=Baaghi%204"><img src="https://img.republicworld.com/all_images/GzfzmqubkAMT57u-1756813479428.webp" alt="Baaghi 4 movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Baaghi 4</h3><p>Action · Thriller</p></span></a>
+<a class="poster" href="movie.html?title=The%20Conjuring%3A%20Last%20Rites"><img src="https://d3lmgsai2rsy7d.cloudfront.net/xuan/media/article/2025/May/theconjuring4-poster.jpg" alt="The Conjuring Last Rites poster" loading="lazy"><span class="poster-copy"><small>English · Hindi</small><h3>The Conjuring: Last Rites</h3><p>Horror · Mystery</p></span></a>
+<a class="poster" href="movie.html?title=Deva"><img src="https://m.media-amazon.com/images/M/MV5BMTg2NzQzNzgtMDM2NC00Y2YxLTg4MDMtMDNhYTY2NTQ5ZjJjXkEyXkFqcGc%40._V1_.jpg" alt="Deva movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Deva</h3><p>Action · Thriller</p></span></a>
+<a class="poster" href="movie.html?title=Kill"><img src="https://m.media-amazon.com/images/M/MV5BNjI0YjYxZjctZGRiMy00NzZhLTg5NjMtY2VlMDJiMTI0Y2UyXkEyXkFqcGc%40._V1_.jpg" alt="Kill movie poster" loading="lazy"><span class="poster-copy"><small>Hindi</small><h3>Kill</h3><p>Action · Thriller</p></span></a>
 </div>
 </section>
 <section class="section" id="editor">
 <div class="section-head"><h2>⭐ Editor’s Picks</h2><a class="view" href="#movies">View All →</a></div>
 <p class="desc">Handpicked films with memorable stories and characters.</p>
 <div class="editor-grid">
-<a class="editor-card" href="https://www.justwatch.com/in/search?q=12th%20Fail" target="_blank" rel="noopener noreferrer"><img src="https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2024/12/vs1ITG-1734602003634.jpg?size=%2A%3A900" alt="12th Fail poster" loading="lazy"><span class="editor-text"><h3>12th Fail</h3><p>A powerful real story of determination and resilience.</p></span><span class="play">▶</span></a>
-<a class="editor-card" href="https://www.justwatch.com/in/search?q=Laapataa%20Ladies" target="_blank" rel="noopener noreferrer"><img src="https://mxp-media.ilnmedia.com/media/content/2024/May/social-manjummel-boys-laapataa-ladies-best-Indian-films-2024_6639d59b6f656.jpeg" alt="Laapataa Ladies poster collage" loading="lazy"><span class="editor-text"><h3>Laapataa Ladies</h3><p>A heartfelt tale of identity, freedom and self-discovery.</p></span><span class="play">▶</span></a>
-<a class="editor-card" href="https://www.justwatch.com/in/search?q=Manjummel%20Boys" target="_blank" rel="noopener noreferrer"><img src="https://media.dinamani.com/dinamani/2024-02/51e31203-9898-4760-8a86-f09a865b56bf/manju.jpg" alt="Manjummel Boys poster" loading="lazy"><span class="editor-text"><h3>Manjummel Boys</h3><p>A gripping survival story about friendship that stays with you.</p></span><span class="play">▶</span></a>
+<a class="editor-card" href="movie.html?title=12th%20Fail"><img src="https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2024/12/vs1ITG-1734602003634.jpg?size=%2A%3A900" alt="12th Fail poster" loading="lazy"><span class="editor-text"><h3>12th Fail</h3><p>A powerful real story of determination and resilience.</p></span><span class="play">▶</span></a>
+<a class="editor-card" href="movie.html?title=Laapataa%20Ladies"><img src="https://mxp-media.ilnmedia.com/media/content/2024/May/social-manjummel-boys-laapataa-ladies-best-Indian-films-2024_6639d59b6f656.jpeg" alt="Laapataa Ladies poster collage" loading="lazy"><span class="editor-text"><h3>Laapataa Ladies</h3><p>A heartfelt tale of identity, freedom and self-discovery.</p></span><span class="play">▶</span></a>
+<a class="editor-card" href="movie.html?title=Manjummel%20Boys"><img src="https://media.dinamani.com/dinamani/2024-02/51e31203-9898-4760-8a86-f09a865b56bf/manju.jpg" alt="Manjummel Boys poster" loading="lazy"><span class="editor-text"><h3>Manjummel Boys</h3><p>A gripping survival story about friendship that stays with you.</p></span><span class="play">▶</span></a>
 </div>
 </section>
 <section class="section" id="ott">
 <div class="section-head"><h2>🎞 What’s New on OTT</h2><a class="view" href="https://www.justwatch.com/in" target="_blank" rel="noopener noreferrer">View All →</a></div>
 <p class="desc">Explore films and series across major streaming platforms. Check each service for current availability.</p>
 <div class="ott-row">
-<a class="ott-card" href="https://www.justwatch.com/in/search?q=Amaran" target="_blank" rel="noopener noreferrer"><img src="https://timelinedaily.com/assets/2024/11/luck-doesnt-knock-twice-unless-youre-baskhar-watch-lucky-baskhar-on-netflix-amal-neerad-movie-bougainvillea-majormukundvaradarajan-jigra.jpg" alt="Amaran and OTT poster artwork" loading="lazy"><span class="platform">Netflix</span><span class="ott-copy"><h3>Amaran</h3><p>Netflix · Tamil</p></span></a>
-<a class="ott-card" href="https://www.justwatch.com/in/search?q=Jigra" target="_blank" rel="noopener noreferrer"><img src="https://timelinedaily.com/assets/2024/11/luck-doesnt-knock-twice-unless-youre-baskhar-watch-lucky-baskhar-on-netflix-amal-neerad-movie-bougainvillea-majormukundvaradarajan-jigra.jpg" alt="Jigra poster artwork" loading="lazy"><span class="platform">Prime Video</span><span class="ott-copy"><h3>Jigra</h3><p>Prime Video · Hindi</p></span></a>
-<a class="ott-card" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer"><img src="https://images.filmibeat.com/600x400/ph-big/img_og/lucky-baskhar-to-kalki-2898-ad-highest-grossing-telugu-movies-of-20241732872458.jpg" alt="Kalki 2898 AD poster artwork" loading="lazy"><span class="platform">Netflix</span><span class="ott-copy"><h3>Kalki 2898 AD</h3><p>OTT · Telugu</p></span></a>
-<a class="ott-card" href="https://www.justwatch.com/in/search?q=HIT%3A%20The%203rd%20Case" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=700&q=85" alt="Crime thriller artwork" loading="lazy"><span class="platform">JioHotstar</span><span class="ott-copy"><h3>HIT: The 3rd Case</h3><p>Crime · Telugu</p></span></a>
-<a class="ott-card" href="https://www.justwatch.com/in/search?q=Lucky%20Baskhar" target="_blank" rel="noopener noreferrer"><img src="https://images.filmibeat.com/600x400/ph-big/img_og/lucky-baskhar-to-kalki-2898-ad-highest-grossing-telugu-movies-of-20241732872458.jpg" alt="Lucky Baskhar movie artwork" loading="lazy"><span class="platform">SonyLIV</span><span class="ott-copy"><h3>Lucky Baskhar</h3><p>Drama · Telugu</p></span></a>
+<a class="ott-card" href="movie.html?title=Amaran"><img src="https://timelinedaily.com/assets/2024/11/luck-doesnt-knock-twice-unless-youre-baskhar-watch-lucky-baskhar-on-netflix-amal-neerad-movie-bougainvillea-majormukundvaradarajan-jigra.jpg" alt="Amaran and OTT poster artwork" loading="lazy"><span class="platform">Netflix</span><span class="ott-copy"><h3>Amaran</h3><p>Netflix · Tamil</p></span></a>
+<a class="ott-card" href="movie.html?title=Jigra"><img src="https://timelinedaily.com/assets/2024/11/luck-doesnt-knock-twice-unless-youre-baskhar-watch-lucky-baskhar-on-netflix-amal-neerad-movie-bougainvillea-majormukundvaradarajan-jigra.jpg" alt="Jigra poster artwork" loading="lazy"><span class="platform">Prime Video</span><span class="ott-copy"><h3>Jigra</h3><p>Prime Video · Hindi</p></span></a>
+<a class="ott-card" href="movie.html?title=Kalki%202898%20AD"><img src="https://images.filmibeat.com/600x400/ph-big/img_og/lucky-baskhar-to-kalki-2898-ad-highest-grossing-telugu-movies-of-20241732872458.jpg" alt="Kalki 2898 AD poster artwork" loading="lazy"><span class="platform">Netflix</span><span class="ott-copy"><h3>Kalki 2898 AD</h3><p>OTT · Telugu</p></span></a>
+<a class="ott-card" href="movie.html?title=HIT%3A%20The%203rd%20Case"><img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=700&q=85" alt="Crime thriller artwork" loading="lazy"><span class="platform">JioHotstar</span><span class="ott-copy"><h3>HIT: The 3rd Case</h3><p>Crime · Telugu</p></span></a>
+<a class="ott-card" href="movie.html?title=Lucky%20Baskhar"><img src="https://images.filmibeat.com/600x400/ph-big/img_og/lucky-baskhar-to-kalki-2898-ad-highest-grossing-telugu-movies-of-20241732872458.jpg" alt="Lucky Baskhar movie artwork" loading="lazy"><span class="platform">SonyLIV</span><span class="ott-copy"><h3>Lucky Baskhar</h3><p>Drama · Telugu</p></span></a>
 </div>
 </section>
 <section class="section" id="genres">
@@ -432,30 +486,65 @@ footer .footer-wordmark-group .footer-by{
  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
  show(0);start();
 })();
-</script></body></html>
-/* Header selected tab: Netflix red blended into the cinematic dark nav */
-header .nav a.active{
- color:#fff;
- background:linear-gradient(120deg,#e50914 0%,#b20710 42%,#4a1824 100%);
- border:1px solid #ff4b57a6;
- box-shadow:0 5px 18px #e5091438,inset 0 1px #ffffff35,0 0 0 1px #e509141c;
- text-shadow:0 1px 8px #0007;
-}
-header .nav a.active:hover{
- background:linear-gradient(120deg,#f6121d 0%,#c40812 42%,#5a1b2a 100%);
- box-shadow:0 7px 22px #e5091450,inset 0 1px #ffffff45;
-}
-header .nav a:not(.active):hover{
- color:#fff;
- background:linear-gradient(120deg,#3a2028aa,#24212dbb);
- box-shadow:inset 0 0 0 1px #e509143d;
-}
+</script>
+<script id="universe-poster-fallbacks">
+(() => {
+ document.querySelectorAll('.poster,.editor-card,.ott-card').forEach(card => {
+  const image=card.querySelector('img');
+  const title=card.querySelector('h3')?.textContent.trim() || image?.alt || 'Artwork unavailable';
+  card.dataset.title=title;
+  const failed=()=>{card.classList.add('image-failed');if(image)image.style.display='none'};
+  if(!image){failed();return}
+  image.addEventListener('error',failed,{once:true});
+  if(image.complete && image.naturalWidth===0) failed();
+ });
+})();
+</script>
 
 
-/* Footer byline: signature begins directly beneath the red trademark dot */
-.footer-wordmark-group{align-items:flex-end!important}
-.footer-wordmark-group .footer-by{align-self:flex-end!important;text-align:right!important;margin-top:2px!important;margin-right:0!important}
+<div class="search-dialog" id="universe-search" role="dialog" aria-modal="true" aria-labelledby="search-heading" aria-hidden="true">
+ <div class="search-panel">
+  <div class="search-panel-head"><h2 id="search-heading">Find your next watch</h2><button class="search-close" id="close-search" type="button" aria-label="Close search">×</button></div>
+  <label for="universe-search-input" class="sr-only">Search movie and series titles</label>
+  <input id="universe-search-input" type="search" placeholder="Search movies, series, languages…" autocomplete="off" />
+  <div class="search-results" id="universe-search-results" aria-live="polite"></div>
+ </div>
+</div>
+<script id="universe-search-functionality">
+(() => {
+ const overlay=document.getElementById('universe-search');
+ const open=document.getElementById('open-search');
+ const close=document.getElementById('close-search');
+ const input=document.getElementById('universe-search-input');
+ const results=document.getElementById('universe-search-results');
+ if(!overlay||!open||!input||!results)return;
+ const titles=[
+  ['Kalki 2898 AD','Telugu · Hindi · Sci-Fi'],['Pushpa 2: The Rule','Telugu · Hindi · Action'],
+  ['Stree 2','Hindi · Horror · Comedy'],['Dune: Part Two','English · Sci-Fi'],
+  ['Thamma','Hindi · Horror · Comedy'],['Ikkis','Hindi · War · Biography'],
+  ['Kantara: Chapter 1','Kannada · Hindi · Mythology'],['Baaghi 4','Hindi · Action'],
+  ['The Conjuring: Last Rites','English · Hindi · Horror'],['Deva','Hindi · Thriller'],
+  ['Kill','Hindi · Action · Thriller'],['12th Fail','Hindi · Drama'],
+  ['Laapataa Ladies','Hindi · Comedy · Drama'],['Manjummel Boys','Malayalam · Thriller'],
+  ['Amaran','Tamil · Drama · Action'],['Jigra','Hindi · Action · Drama'],
+  ['HIT: The 3rd Case','Telugu · Crime · Thriller'],['Lucky Baskhar','Telugu · Drama'],
 
-/* Footer signature: byline sits directly beneath the red trademark dot */
-.footer-wordmark-group{align-items:flex-end!important}
-.footer-wordmark-group .footer-by{align-self:flex-end!important;text-align:right!important;margin-top:3px!important}
+ ];
+ const openDialog=()=>{overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';input.value='';render('');setTimeout(()=>input.focus(),30)};
+ const closeDialog=()=>{overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow='';open.focus()};
+ function render(query){
+  const q=query.trim().toLowerCase();
+  const found=titles.filter((item,i)=>item[0].toLowerCase().includes(q)||item[1].toLowerCase().includes(q))
+   .filter((item,i,arr)=>arr.findIndex(x=>x[0].toLowerCase()===item[0].toLowerCase())===i).slice(0,12);
+  results.replaceChildren();
+  if(!found.length){const empty=document.createElement('div');empty.className='search-empty';empty.textContent=q?'No matching titles. Try another title, language, or genre.':'Start typing a title, genre, or language.';results.append(empty);return}
+  found.forEach(([title,meta])=>{const a=document.createElement('a');a.className='search-result';a.href='movie.html?title='+encodeURIComponent(title);const copy=document.createElement('span');const strong=document.createElement('strong');strong.textContent=title;const small=document.createElement('small');small.textContent=meta;copy.append(strong,small);const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');a.append(copy,arrow);results.append(a)});
+ }
+ open.addEventListener('click',openDialog);close?.addEventListener('click',closeDialog);
+ input.addEventListener('input',()=>render(input.value));
+ overlay.addEventListener('click',e=>{if(e.target===overlay)closeDialog()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('open'))closeDialog()});
+ render('');
+})();
+</script>
+</body></html>
