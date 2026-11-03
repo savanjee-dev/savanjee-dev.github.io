@@ -67,7 +67,7 @@ footer{border-top:1px solid var(--line);padding:25px 0 35px;color:#aeb0bd;font-s
  };
  const params=new URLSearchParams(location.search);
  const raw=params.get("title")||"";
- const key=raw.trim().toLowerCase().replace(/\s+/g," ");
+ const key=raw.trim().toLowerCase().replace(/[^a-z0-9 ]/g,"").replace(/\s+/g," ");
  const movie=catalog[key];
  const title=movie?.title||raw.trim()||"Movie details";
  const poster=movie?.poster||"";
