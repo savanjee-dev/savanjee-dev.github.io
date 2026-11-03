@@ -321,6 +321,23 @@ footer .footer-wordmark-group .footer-by{
 .poster.image-failed img,.editor-card.image-failed img,.ott-card.image-failed img{display:none!important}
 .poster.image-failed:after,.editor-card.image-failed:after,.ott-card.image-failed:after{background:linear-gradient(0deg,#070912b8,transparent 75%)}
 
+
+/* Accessible local movie search */
+.search{color:#fff;cursor:pointer}
+.search:focus-visible,.search-dialog input:focus-visible,.search-result:focus-visible{outline:2px solid #ff526a;outline-offset:3px}
+.search-dialog{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:12vh 18px 24px;background:#03050bd9;backdrop-filter:blur(12px)}
+.search-dialog.open{display:flex}
+.search-panel{width:min(680px,100%);max-height:78vh;overflow:auto;border:1px solid #ffffff25;border-radius:22px;background:linear-gradient(145deg,#1a1d2b,#0e111b);box-shadow:0 30px 100px #000b;padding:22px}
+.search-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.search-panel-head h2{margin:0;font-size:22px}
+.search-close{border:1px solid #ffffff25;background:#ffffff0b;color:#fff;border-radius:12px;width:40px;height:40px;cursor:pointer;font-size:20px}
+.search-dialog input{width:100%;border:1px solid #ffffff30;background:#080b16;color:#fff;border-radius:14px;padding:15px 16px;font:inherit;outline:none}
+.search-results{display:grid;gap:8px;margin-top:14px}
+.search-result{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;border:1px solid #ffffff12;border-radius:13px;background:#ffffff06;transition:background .18s,border-color .18s}
+.search-result:hover{background:#e5091417;border-color:#e5091466}
+.search-result strong{display:block;font-size:14px}.search-result small{display:block;color:#aeb3c3;font-size:11px;margin-top:3px}
+.search-empty{color:#b8bac8;padding:18px 4px;font-size:13px}
+@media(max-width:600px){.search-dialog{padding:8vh 12px 18px}.search-panel{padding:16px;border-radius:18px}.search-panel-head h2{font-size:19px}}
 </style>
 </head>
 <body>
@@ -328,7 +345,7 @@ footer .footer-wordmark-group .footer-by{
 <header>
 <a class="brand" href="index.html"><span class="brand-word">UNIVERSE<span class="trademark-dot">.</span></span><small>Movies · Series · OTT · Discover</small></a>
 <nav class="nav" aria-label="Main navigation"><a class="active" href="#home">⌂ &nbsp;Home</a><a href="#movies">▣ &nbsp;Movies</a><a href="#series">▣ &nbsp;Series</a><a href="#ott">▱ &nbsp;OTT</a><a href="#more">More⌄</a></nav>
-<a class="search" href="https://www.justwatch.com/in" aria-label="Search movies">⌕</a>
+<button class="search" id="open-search" type="button" aria-label="Search movies" aria-haspopup="dialog" aria-controls="universe-search">⌕</button>
 </header>
 <main id="home">
 <section class="hero" id="hero-carousel" aria-label="Featured movies"><div class="hero-bg" id="hero-bg"><img id="hero-image" src="https://m.media-amazon.com/images/M/MV5BMTM3ZGUwYTEtZTI5NS00ZmMyLTk2YmQtMWU4YjlhZTI3NjRjXkEyXkFqcGc%40._V1_.jpg" alt="" aria-hidden="true"></div><div class="hero-content" id="hero-content"><div class="eyebrow">UNIVERSE SPOTLIGHT · INDIAN CINEMA</div><h1 id="hero-title">KALKI <span>2898 AD</span></h1><div class="meta" id="hero-meta"><span>Action</span><span>Sci-Fi</span><span>Drama</span><span>2024</span></div><p class="hero-description" id="hero-description">In a dystopian future, the final battle for humanity’s survival begins with the birth of Kalki.</p><div class="actions"><a class="btn primary" id="hero-watch" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer">▶ &nbsp;Watch Now</a><a class="btn" id="hero-list" href="https://www.justwatch.com/in/search?q=Kalki%202898%20AD" target="_blank" rel="noopener noreferrer">＋ &nbsp;My List</a></div></div><button class="hero-arrow hero-prev" type="button" aria-label="Previous featured title">‹</button><button class="hero-arrow hero-next" type="button" aria-label="Next featured title">›</button><div class="hero-dots" id="hero-dots"><button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button><button aria-label="Slide 4"></button><button aria-label="Slide 5"></button></div></section>
@@ -460,6 +477,52 @@ footer .footer-wordmark-group .footer-by{
 })();
 </script>
 
+
+<div class="search-dialog" id="universe-search" role="dialog" aria-modal="true" aria-labelledby="search-heading" aria-hidden="true">
+ <div class="search-panel">
+  <div class="search-panel-head"><h2 id="search-heading">Find your next watch</h2><button class="search-close" id="close-search" type="button" aria-label="Close search">×</button></div>
+  <label for="universe-search-input" class="sr-only">Search movie and series titles</label>
+  <input id="universe-search-input" type="search" placeholder="Search movies, series, languages…" autocomplete="off" />
+  <div class="search-results" id="universe-search-results" aria-live="polite"></div>
+ </div>
+</div>
+<script id="universe-search-functionality">
+(() => {
+ const overlay=document.getElementById('universe-search');
+ const open=document.getElementById('open-search');
+ const close=document.getElementById('close-search');
+ const input=document.getElementById('universe-search-input');
+ const results=document.getElementById('universe-search-results');
+ if(!overlay||!open||!input||!results)return;
+ const titles=[
+  ['Kalki 2898 AD','Telugu · Hindi · Sci-Fi'],['Pushpa 2: The Rule','Telugu · Hindi · Action'],
+  ['Stree 2','Hindi · Horror · Comedy'],['Dune: Part Two','English · Sci-Fi'],
+  ['Thamma','Hindi · Horror · Comedy'],['Ikkis','Hindi · War · Biography'],
+  ['Kantara: Chapter 1','Kannada · Hindi · Mythology'],['Baaghi 4','Hindi · Action'],
+  ['The Conjuring: Last Rites','English · Hindi · Horror'],['Deva','Hindi · Thriller'],
+  ['Kill','Hindi · Action · Thriller'],['12th Fail','Hindi · Drama'],
+  ['Laapataa Ladies','Hindi · Comedy · Drama'],['Manjummel Boys','Malayalam · Thriller'],
+  ['Amaran','Tamil · Drama · Action'],['Jigra','Hindi · Action · Drama'],
+  ['HIT: The 3rd Case','Telugu · Crime · Thriller'],['Lucky Baskhar','Telugu · Drama'],
+  ['Kalki 2898 AD','Telugu · Sci-Fi · Action']
+ ];
+ const openDialog=()=>{overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';input.value='';render('');setTimeout(()=>input.focus(),30)};
+ const closeDialog=()=>{overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow='';open.focus()};
+ function render(query){
+  const q=query.trim().toLowerCase();
+  const found=titles.filter((item,i)=>item[0].toLowerCase().includes(q)||item[1].toLowerCase().includes(q))
+   .filter((item,i,arr)=>arr.findIndex(x=>x[0].toLowerCase()===item[0].toLowerCase())===i).slice(0,12);
+  results.replaceChildren();
+  if(!found.length){const empty=document.createElement('div');empty.className='search-empty';empty.textContent=q?'No matching titles. Try another title, language, or genre.':'Start typing a title, genre, or language.';results.append(empty);return}
+  found.forEach(([title,meta])=>{const a=document.createElement('a');a.className='search-result';a.href='movie.html?title='+encodeURIComponent(title);const copy=document.createElement('span');const strong=document.createElement('strong');strong.textContent=title;const small=document.createElement('small');small.textContent=meta;copy.append(strong,small);const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');a.append(copy,arrow);results.append(a)});
+ }
+ open.addEventListener('click',openDialog);close?.addEventListener('click',closeDialog);
+ input.addEventListener('input',()=>render(input.value));
+ overlay.addEventListener('click',e=>{if(e.target===overlay)closeDialog()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('open'))closeDialog()});
+ render('');
+})();
+</script>
 </body></html>
 /* Header selected tab: Netflix red blended into the cinematic dark nav */
 header .nav a.active{
