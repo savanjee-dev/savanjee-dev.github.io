@@ -4,7 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#080b16">
-<meta name="description" content="Movie details and official streaming discovery on UNIVERSE.">
+<meta name="author" content="Savan Jee">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="description" content="Explore movie details, genres and languages on UNIVERSE. Find official streaming availability in India.">
+<link rel="canonical" href="https://universe-by-savan.netlify.app/movie.html">
+<meta property="og:type" content="video.movie">
+<meta property="og:site_name" content="UNIVERSE">
+<meta property="og:title" content="Movie Details — UNIVERSE">
+<meta property="og:description" content="Explore movie details and check official streaming availability in India.">
+<meta property="og:url" content="https://universe-by-savan.netlify.app/movie.html">
+<meta property="og:image" content="https://universe-by-savan.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Movie Details — UNIVERSE">
+<meta name="twitter:description" content="Explore movie details and official streaming availability in India.">
 <title>Movie Details — UNIVERSE</title>
 <style>
 :root{--bg:#080b16;--panel:#151927;--text:#f8f8fb;--muted:#b8bac8;--red:#e50914;--line:#ffffff1a}
@@ -77,6 +89,26 @@ footer{border-top:1px solid var(--line);padding:25px 0 35px;color:#aeb0bd;font-s
  const title=movie?.title||raw.trim()||"Movie details";
  const poster=movie?.poster||"";
  document.title=title+" — UNIVERSE";
+ const pageUrl="https://universe-by-savan.netlify.app/movie.html?title="+encodeURIComponent(title);
+ const description=(movie?.summary||"Explore "+title+" and check current official streaming availability in India.")+" UNIVERSE is an independent discovery guide and does not host films.";
+ const setMeta=(selector,attribute,value)=>{
+   let node=document.querySelector(selector);
+   if(!node){node=document.createElement("meta");const match=selector.match(/(?:name|property)="([^"]+)"/);node.setAttribute(selector.includes("property=")?"property":"name",match[1]);document.head.appendChild(node)}
+   node.setAttribute(attribute,value);
+ };
+ setMeta('meta[name="description"]',"content",description);
+ setMeta('meta[property="og:title"]',"content",title+" — UNIVERSE");
+ setMeta('meta[property="og:description"]',"content",description);
+ setMeta('meta[property="og:url"]',"content",pageUrl);
+ setMeta('meta[property="og:image"]',"content",poster||"https://images.filmibeat.com/img/2024/06/kalki-2898-ad-1718261882.jpg");
+ setMeta('meta[name="twitter:title"]',"content",title+" — UNIVERSE");
+ setMeta('meta[name="twitter:description"]',"content",description);
+ setMeta('meta[name="twitter:image"]',"content",poster||"https://images.filmibeat.com/img/2024/06/kalki-2898-ad-1718261882.jpg");
+ const canonical=document.querySelector('link[rel="canonical"]');if(canonical)canonical.href=pageUrl;
+ const schema=document.getElementById("movie-schema")||document.createElement("script");
+ schema.id="movie-schema";schema.type="application/ld+json";
+ schema.textContent=JSON.stringify({"@context":"https://schema.org","@type":"Movie","name":title,"description":description,"url":pageUrl,"image":poster||undefined,"genre":movie?.genres||undefined,"inLanguage":movie?.language||undefined,"publisher":{"@type":"Organization","name":"UNIVERSE","url":"https://universe-by-savan.netlify.app/"}});
+ if(!schema.parentNode)document.head.appendChild(schema);
  document.getElementById("title").textContent=title;
  document.getElementById("summary").textContent=movie?.summary||"Explore this title and check current streaming availability in India.";
  document.getElementById("about").textContent=movie?.about||"This title is not yet part of the curated UNIVERSE detail catalogue. Use the official search links below to verify information.";
